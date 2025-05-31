@@ -5,7 +5,7 @@ I am interested in learning new things concerned with technology. And I'm expert
 * Cryptocurrency trading 
 * Bugs bounty hunting 
 
-I have gained more skills that helps me to perform my duties well. my skills are outlined in my portfolio 
+I have gained more skills that helps me to perform my duties well. My skills and my sample works that I have completed are outlined in my portfolio. 
 
 To view my portfolio click here below
 
