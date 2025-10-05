@@ -49,9 +49,9 @@ I believe in using innovation, design, and security to create meaningful digital
 
 
 ## Let's Connect
-- 🌐 **Website:** [yourwebsite.com]  
-- 💼 **LinkedIn:** [linkedin.com/in/yourname]  
-- 💻 **GitHub:** [github.com/yourusername]  
+- 🌐 **Website:** www.damygasotech.com 
+- 💼 **LinkedIn:** https://www.linkedin.com/in/damy-gaso
+- 💻 **GitHub:** https://github.com/DAMY-GASO
 - ✉️ **Email:** damygaso@gmail.com
 
 Let’s collaborate to bring **secure, creative, and optimized technology solutions** to life 
@@ -61,8 +61,3 @@ Let’s collaborate to bring **secure, creative, and optimized technology soluti
 ### 🧾 Motto:
 **“Think Secure. Build Smart. Grow Organically.”**
 ```
-
-
-To view my portfolio click here below
-
-https://damy-portfolio.vercel.app/
