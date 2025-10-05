@@ -1717,7 +1717,212 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .social-list { justify-content: center; }
 
+/* Responsive fixes for mobile devices */
+@media screen and (max-width: 768px) {
+  /* General responsive adjustments */
+  body {
+    font-size: 14px;
+  }
+  
+  /* Sidebar adjustments */
+  .sidebar {
+    width: 100%;
+    position: relative;
+  }
+  
+  .sidebar-info {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .avatar-box {
+    margin: 0 auto 15px;
+  }
+  
+  /* Main content adjustments */
+  .main-content {
+    margin-left: 0;
+    padding: 15px;
+  }
+  
+  /* Navbar adjustments */
+  .navbar-list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .navbar-item {
+    margin: 5px;
+  }
+  
+  .navbar-link {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+  
+  /* Service section adjustments */
+  .service-list {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .service-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .service-icon-box {
+    margin-bottom: 15px;
+    margin-right: 0;
+  }
+  
+  /* Testimonials adjustments */
+  .testimonials-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .testimonials-avatar-box {
+    width: 80px;
+    height: 80px;
+  }
+  
+  /* Skills section adjustments */
+  .skills-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .title-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .title-wrapper data {
+    margin-top: 5px;
+  }
+  
+  /* Projects section adjustments */
+  .filter-list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .filter-item {
+    margin: 5px;
+  }
+  
+  .project-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-img img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Contact form adjustments */
+  .input-wrapper {
+    flex-direction: column;
+  }
+  
+  .input-wrapper .form-input {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  /* Text adjustments for mobile */
+  .h1, .h2, .h3, .h4, .h5 {
+    word-wrap: break-word;
+  }
+  
+  .name {
+    font-size: 1.5rem;
+  }
+  
+  .title {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  
+  /* Ensure images are responsive */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Fix for long project titles */
+  .project-title {
+    font-size: 1rem;
+    word-wrap: break-word;
+  }
+  
+  /* Clients section adjustments */
+  .clients-list {
+    justify-content: center;
+  }
+  
+  .clients-item {
+    margin: 10px;
+  }
+  
+  .clients-item img {
+    max-width: 120px;
+  }
+}
 
+/* Additional fixes for very small screens */
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 13px;
+  }
+  
+  .navbar-link {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+  
+  .project-title {
+    font-size: 0.9rem;
+  }
+  
+  .service-item-title {
+    font-size: 1rem;
+  }
+  
+  /* Timeline adjustments */
+  .timeline-list {
+    padding-left: 20px;
+  }
+  
+  .timeline-item {
+    padding-left: 20px;
+  }
+  
+  .timeline-item-title {
+    font-size: 0.9rem;
+  }
+  
+  /* Contact form button */
+  .form-btn {
+    width: 100%;
+  }
+}
+
+/* Ensure text doesn't overflow containers */
+.about-text, .service-item-text, .testimonials-text, .timeline-text {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Fix for specific image paths that might be incorrect */
+.project-img img[src*="Screenshot_20250709-212509"] {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make sure all icons scale properly */
+ion-icon {
+  font-size: inherit;
+}
 
   /**
 	 * RESUME
