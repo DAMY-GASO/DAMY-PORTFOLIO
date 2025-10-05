@@ -34,7 +34,7 @@ With a strong foundation in **ethical hacking and cyber awareness**, I assess sy
 
 **Tech Stack:**  
 - HTML, CSS, JavaScript  
-- Python, PHP  
+- Node Js, PHP  
 - WordPress, React  
 - Google Analytics, Search Console, SEMrush, Ahrefs  
 - Kali Linux, Metasploit, Burp Suite, Wireshark  
@@ -42,7 +42,7 @@ With a strong foundation in **ethical hacking and cyber awareness**, I assess sy
 
 
 ## My Philosophy
-> “Technology should empower people, not complicate their lives.”  
+> Technology should empower people, not complicate their lives. 
 
 I believe in using innovation, design, and security to create meaningful digital solutions that make technology both powerful and human.
 
@@ -56,8 +56,3 @@ I believe in using innovation, design, and security to create meaningful digital
 
 Let’s collaborate to bring **secure, creative, and optimized technology solutions** to life 
 
-
-
-### 🧾 Motto:
-**“Think Secure. Build Smart. Grow Organically.”**
-```
