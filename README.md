@@ -50,7 +50,7 @@ I believe in using innovation, design, and security to create meaningful digital
 
 ## Let's Connect
 - 🌐 **Website:** www.damygasotech.com 
-- 💼 **LinkedIn:** https://www.linkedin.com/in/damy-gaso
+- 💼 **LinkedIn:** https://www.linkedin.com/in/damy-gaso-668281361?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
 - 💻 **GitHub:** https://github.com/DAMY-GASO
 - ✉️ **Email:** damygaso@gmail.com
 
