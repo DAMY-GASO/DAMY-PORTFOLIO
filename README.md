@@ -1,16 +1,15 @@
 
 # 👋 Hi, I'm Damas Gambo 
 
-### Tech Consultant | SEO & Content Marketing Specialist | Web Developer | Cyber Security Facilitator & Penetration Tester  
-
+### Cybersecurity Consultant | SEO & Content Marketing Specialist | Web Developer & vulnerability analyst
 Welcome to my digital space!  
-I'm a results-driven **Technology Consultant** with a diverse background in **web development, SEO strategy, and cybersecurity**. My work focuses on helping individuals, businesses, and organizations build secure, optimized, and high-performing digital systems that truly make an impact.
+I'm a results-driven **Cybersecurity Consultant** with a diverse background in **web development, SEO strategy, and vulnerability analyst**. My work focuses on helping individuals, businesses, and organizations build secure, optimized, and high-performing digital systems that truly make an impact.
 
 
 
 ## What I Do
 
-### 💼 Tech Consulting
+### 💼 Cybersecurity Consulting
 I help businesses adopt modern technology solutions to enhance efficiency, scalability, and digital presence — from system integration to workflow automation and digital transformation strategies.  
 
 ### 🔍 SEO & Content Marketing
@@ -19,7 +18,7 @@ As an **SEO Specialist**, I design data-driven strategies that boost visibility 
 ### 💻 Web Development
 I build and maintain **responsive, fast, and SEO-friendly websites** using HTML, CSS, JavaScript, and modern frameworks. My goal is to create user-centered digital experiences that perform flawlessly across devices.  
 
-### 🛡️ Cyber Security & Penetration Testing
+### 🛡️ Web vulnerability analysis
 With a strong foundation in **ethical hacking and cyber awareness**, I assess system vulnerabilities, conduct penetration testing, and deliver tailored cybersecurity solutions to safeguard digital assets.
 
 
