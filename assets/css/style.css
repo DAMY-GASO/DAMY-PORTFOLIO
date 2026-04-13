@@ -319,6 +319,17 @@ main {
   overflow-wrap: break-word;
 }
 .contact-info address { font-style: normal; }
+/* CV download button (reuse form-btn style) */
+.cv-download {
+  margin-top: 30px;
+  text-align: center;
+}
+.cv-download .form-btn {
+  display: inline-flex;
+  width: auto;
+  background: var(--border-gradient-onyx);
+  margin: 0 auto;
+}
 
 /*-----------------------------------*\
   #NAVBAR
