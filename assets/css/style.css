@@ -725,6 +725,36 @@ textarea.form-input::-webkit-resizer { display: none; }
 .form-btn:disabled:hover { background: var(--border-gradient-onyx); }
 .form-btn:disabled:hover::before { background: var(--bg-gradient-jet); }
 
+/* Social links on contact page */
+.social-links {
+  text-align: center;
+  margin-top: 30px;
+}
+.social-links .social-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.social-links .social-item .social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: var(--eerie-black-2);
+  border-radius: 12px;
+  font-size: 28px;
+  color: var(--light-gray);
+  transition: var(--transition-1);
+  border: 1px solid var(--jet);
+}
+.social-links .social-item .social-link:hover {
+  color: var(--orange-yellow-crayola);
+  transform: translateY(-3px);
+  border-color: var(--orange-yellow-crayola);
+}
+
 /*-----------------------------------*\
   #RESPONSIVE (≥580px)
 \*-----------------------------------*/
