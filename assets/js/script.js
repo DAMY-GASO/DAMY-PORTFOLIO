@@ -29,8 +29,26 @@ if (sidebarBtn && sidebar) {
 // custom select variables (portfolio filter)
 const select = document.querySelector("[data-select]");
 const selectItems = document.querySelectorAll("[data-select-item]");
-const selectValue = document.querySelector("[data-select-value]");  // fixed typo
+const selectValue = document.querySelector("[data-select-value]");
 const filterBtn = document.querySelectorAll("[data-filter-btn]");
+
+// filter variables
+const filterItems = document.querySelectorAll("[data-filter-item]");
+
+// Filter function – case‑insensitive and trim
+const filterFunc = function (selectedValue) {
+  const lowerSelected = selectedValue.trim().toLowerCase();
+  for (let i = 0; i < filterItems.length; i++) {
+    const itemCategory = filterItems[i].dataset.category;
+    if (lowerSelected === "all") {
+      filterItems[i].classList.add("active");
+    } else if (itemCategory && itemCategory.toLowerCase() === lowerSelected) {
+      filterItems[i].classList.add("active");
+    } else {
+      filterItems[i].classList.remove("active");
+    }
+  }
+}
 
 if (select && selectValue) {
   select.addEventListener("click", function () { 
@@ -47,27 +65,11 @@ if (select && selectValue) {
   // add event to all select items
   for (let i = 0; i < selectItems.length; i++) {
     selectItems[i].addEventListener("click", function () {
-      let selectedValue = this.innerText.trim();  // keep original case
+      let selectedValue = this.innerText.trim();
       selectValue.innerText = this.innerText;
       elementToggleFunc(select);
       filterFunc(selectedValue);
     });
-  }
-}
-
-// filter variables
-const filterItems = document.querySelectorAll("[data-filter-item]");
-
-const filterFunc = function (selectedValue) {
-  for (let i = 0; i < filterItems.length; i++) {
-    const itemCategory = filterItems[i].dataset.category;
-    if (selectedValue === "All" || selectedValue === "all") {
-      filterItems[i].classList.add("active");
-    } else if (itemCategory && itemCategory === selectedValue) {
-      filterItems[i].classList.add("active");
-    } else {
-      filterItems[i].classList.remove("active");
-    }
   }
 }
 
@@ -103,7 +105,6 @@ const validateForm = function () {
     }
   });
   
-  // also check the form's overall validity (e.g. required fields)
   if (form && isValid && form.checkValidity()) {
     formBtn.removeAttribute("disabled");
   } else {
