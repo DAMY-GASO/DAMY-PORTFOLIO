@@ -3,29 +3,29 @@
 \*-----------------------------------*/
 
 :root {
-  /* gradients */
-  --bg-gradient-onyx: linear-gradient(to bottom right, hsl(182, 48%, 69%) 3%, hsl(180, 63%, 53%) 97%);
-  --bg-gradient-jet: linear-gradient(to bottom right, hsla(62, 50%, 71%, 0.938) 0%, hsla(167, 17%, 10%, 0.897) 100%), hsl(240, 2%, 13%);
-  --bg-gradient-yellow-1: linear-gradient(to bottom right, hsl(45, 100%, 71%) 0%, hsla(49, 53%, 51%, 0.925) 50%);
-  --bg-gradient-yellow-2: linear-gradient(135deg, hsla(45, 91%, 77%, 0.815) 0%, hsla(35, 65%, 70%, 0.938) 59.86%), hsl(50, 64%, 73%);
-  --border-gradient-onyx: linear-gradient(to bottom right, hsl(249, 76%, 20%) 0%, hsla(239, 79%, 33%, 0.815) 50%);
-  --text-gradient-yellow: linear-gradient(to right, hsl(45, 100%, 72%), hsl(35, 100%, 68%));
+  /* gradients – dark base with neon cyan accents */
+  --bg-gradient-onyx: linear-gradient(to bottom right, #00ffff, #0088ff);
+  --bg-gradient-jet: linear-gradient(to bottom right, #0a0a0a, #1a1a1a);
+  --bg-gradient-yellow-1: linear-gradient(to bottom right, #00ffff, #00aaff);
+  --bg-gradient-yellow-2: linear-gradient(135deg, #00ffff, #0088ff);
+  --border-gradient-onyx: linear-gradient(to bottom right, #333333, #111111);
+  --text-gradient-yellow: linear-gradient(to right, #00ffff, #0088ff);
 
-  /* solid colors */
-  --jet: hsl(0, 0%, 22%);
-  --onyx: hsl(182, 67%, 15%);
-  --eerie-black-1: hsl(209, 63%, 73%);
-  --eerie-black-2: hsl(180, 82%, 13%);
-  --smoky-black: hsl(202, 47%, 90%);
-  --white-1: hsl(0, 0%, 100%);
-  --white-2: hsl(0, 0%, 98%);
-  --orange-yellow-crayola: hsl(45, 100%, 72%);
-  --vegas-gold: hsl(45, 54%, 58%);
-  --light-gray: hsl(0, 0%, 84%);
-  --light-gray-70: hsla(0, 0%, 84%, 0.7);
-  --bittersweet-shimmer: hsl(0, 43%, 51%);
+  /* solid colors – dark theme with neon cyan as accent */
+  --jet: #1a1a1a;
+  --onyx: #111111;
+  --eerie-black-1: #2a2a2a;
+  --eerie-black-2: #0a0a0a;
+  --smoky-black: #000000;
+  --white-1: #ffffff;
+  --white-2: #e0e0e0;
+  --orange-yellow-crayola: #00ffff;   /* neon cyan accent */
+  --vegas-gold: #00aaff;
+  --light-gray: #b0b0b0;
+  --light-gray-70: rgba(176, 176, 176, 0.7);
+  --bittersweet-shimmer: #ff4444;
 
-  /* typography */
+  /* typography – unchanged */
   --ff-poppins: 'Poppins', sans-serif;
   --fs-1: 24px;
   --fs-2: 18px;
@@ -40,18 +40,17 @@
   --fw-500: 500;
   --fw-600: 600;
 
-  /* shadows */
+  /* shadows – kept as is (dark theme friendly) */
   --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
   --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
   --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
   --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
   --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
 
-  /* transitions */
+  /* transitions – unchanged */
   --transition-1: 0.25s ease;
   --transition-2: 0.5s ease-in-out;
 }
-
 /*-----------------------------------*\
   #RESET
 \*-----------------------------------*/
