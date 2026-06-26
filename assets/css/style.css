@@ -3,27 +3,32 @@
 \*-----------------------------------*/
 
 :root {
-  /* gradients – dark base with neon cyan accents */
-  --bg-gradient-onyx: linear-gradient(to bottom right, #00ffff, #0088ff);
-  --bg-gradient-jet: linear-gradient(to bottom right, #0a0a0a, #1a1a1a);
-  --bg-gradient-yellow-1: linear-gradient(to bottom right, #00ffff, #00aaff);
-  --bg-gradient-yellow-2: linear-gradient(135deg, #00ffff, #0088ff);
-  --border-gradient-onyx: linear-gradient(to bottom right, #333333, #111111);
-  --text-gradient-yellow: linear-gradient(to right, #00ffff, #0088ff);
-
-  /* solid colors – dark theme with neon cyan as accent */
-  --jet: #1a1a1a;
-  --onyx: #111111;
-  --eerie-black-1: #2a2a2a;
-  --eerie-black-2: #0a0a0a;
-  --smoky-black: #000000;
+  /* core palette /
   --white-1: #ffffff;
-  --white-2: #e0e0e0;
-  --orange-yellow-crayola: #00ffff;   /* neon cyan accent */
-  --vegas-gold: #00aaff;
-  --light-gray: #b0b0b0;
-  --light-gray-70: rgba(176, 176, 176, 0.7);
-  --bittersweet-shimmer: #ff4444;
+  --white-2: #ffffff; / use same white for simplicity /
+  --smoky-black: #000000; / page background / primary black /
+  --onyx: #000000; / darker blacks */
+  --jet: #000000;
+  --eerie-black-1: #000000;
+  --eerie-black-2: #000000;
+
+  --navy: #003366;   /* dark navy (primary dark accent) /
+  --color-blue: #66CCFF; / light blue (accent) */
+
+  /* gradients adapted to palette /
+  --bg-gradient-onyx: linear-gradient(to bottom right, var(--color-blue), var(--navy));
+  --bg-gradient-jet: linear-gradient(to bottom right, #000000, #00111a); / subtle dark */
+  --bg-gradient-yellow-1: linear-gradient(to bottom right, var(--color-blue), #4dbff0);
+  --bg-gradient-yellow-2: linear-gradient(135deg, var(--color-blue), var(--navy));
+  --border-gradient-onyx: linear-gradient(to bottom right, rgba(0,0,0,0.85), rgba(0,0,0,0.95));
+  --text-gradient-yellow: linear-gradient(to right, var(--color-blue), var(--navy));
+
+  /* accents & misc /
+  --orange-yellow-crayola: var(--color-blue); / accent (was neon cyan) /
+  --vegas-gold: var(--navy); / secondary accent /
+  --light-gray: rgba(255,255,255,0.85); / for readable muted text on dark bg /
+  --light-gray-70: rgba(255,255,255,0.7);
+  --bittersweet-shimmer: #ff4444; / keep red for invalid state if needed */
 
   /* typography – unchanged */
   --ff-poppins: 'Poppins', sans-serif;
@@ -40,16 +45,19 @@
   --fw-500: 500;
   --fw-600: 600;
 
-  /* shadows – kept as is (dark theme friendly) */
+  /* shadows & transitions – kept */
   --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
   --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
   --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
   --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
   --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
 
-  /* transitions – unchanged */
   --transition-1: 0.25s ease;
   --transition-2: 0.5s ease-in-out;
+
+  /* convenience tokens used by components */
+  --bg: var(--smoky-black);
+  --text: var(--light-gray);
 }
 /*-----------------------------------*\
   #RESET
