@@ -51,7 +51,7 @@ I create secure, human-centered digital solutions that combine innovation, desig
 
 🌐 **Website:** www.damygasotech.com  
 💼 **LinkedIn:** https://www.linkedin.com/in/damy-gaso-668281361?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
-💻 **GitHub:** github.com/DAMY-GASO  
+💻 **GitHub:** (https://github.com/DAMY-GASO)  
 ✉️ **Email:** damygaso@gmail.com
 
 Let's collaborate to create **secure, scalable, and search-optimized digital solutions**. 🌐
