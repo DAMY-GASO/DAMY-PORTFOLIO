@@ -524,6 +524,36 @@ main {
   transition: width 1s ease-in-out;
 }
 
+
+.services { padding: 50px 20px; text-align: center; }
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Nafasi kati ya kadi */
+    flex-wrap: wrap; /* Hii inafanya kadi zishuke mstari mwingine zikikosa nafasi */
+}
+
+.service-card {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px; /* Upana wa kadi */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px); /* Inainuka kidogo ikiguswa */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Responsive kwa ajili ya simu */
+@media (max-width: 600px) {
+    .service-card { width: 100%; }
+}
+
+
 /*-----------------------------------*\
   #PORTFOLIO
 \*-----------------------------------*/
