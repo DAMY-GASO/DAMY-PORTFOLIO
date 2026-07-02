@@ -3,25 +3,27 @@
 \*-----------------------------------*/
 
 :root {
-  /* core palette /
-  --white-1: #ffffff;
-  --white-2: #ffffff; / use same white for simplicity /
-  --smoky-black: #000000; / page background / primary black /
-  --onyx: #000000; / darker blacks */
-  --jet: #000000;
-  --eerie-black-1: #000000;
-  --eerie-black-2: #000000;
+  /* Brand Palette */
+  --navy: #003366;
+  --sky: #66CCFF; /* Hii ndio ilikuwa color-blue yako */
+  --white: #ffffff;
+  --black: #000000;
 
-  --navy: #003366;   /* dark navy (primary dark accent) /
-  --color-blue: #66CCFF; / light blue (accent) */
-
-  /* gradients adapted to palette /
-  --bg-gradient-onyx: linear-gradient(to bottom right, var(--color-blue), var(--navy));
-  --bg-gradient-jet: linear-gradient(to bottom right, #000000, #00111a); / subtle dark */
-  --bg-gradient-yellow-1: linear-gradient(to bottom right, var(--color-blue), #4dbff0);
-  --bg-gradient-yellow-2: linear-gradient(135deg, var(--color-blue), var(--navy));
-  --border-gradient-onyx: linear-gradient(to bottom right, rgba(0,0,0,0.85), rgba(0,0,0,0.95));
-  --text-gradient-yellow: linear-gradient(to right, var(--color-blue), var(--navy));
+  /* Badilisha hizi ili ziendane na brand yako */
+  --smoky-black: #000000; /* Background kuu */
+  --eerie-black-2: #1a1a1a; /* Kidogo ili kutofautisha sidebar na background */
+  --jet: #333333; /* Kwa ajili ya borders */
+  
+  --orange-yellow-crayola: var(--sky); /* Badala ya neon cyan, tunatumia Sky Blue */
+  --vegas-gold: var(--navy); 
+  
+  --light-gray: #e0e0e0; /* Maandishi mepesi ya kusomeka kwenye background nyeusi */
+  --light-gray-70: #b0b0b0;
+  
+  /* Gradints mpya */
+  --bg-gradient-jet: linear-gradient(to bottom right, #111111, #001122);
+  --text-gradient-yellow: linear-gradient(to right, var(--sky), #ffffff);
+}
 
   /* accents & misc /
   --orange-yellow-crayola: var(--color-blue); / accent (was neon cyan) /
