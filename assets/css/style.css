@@ -703,11 +703,27 @@ main {
   margin-bottom: 25px;
 }
 .form-input {
-  color: var(--white-2);
+  background: var(--smoky-black); /* background nyeusi */
+  color: var(--white);            /* maandishi meupe */
+  border: 1px solid var(--jet);
+}
+
+.form-btn {
+  background: var(--navy); /* Button ya Navy */
+  color: var(--white);
+}
+
+.form-btn:hover {
+  background: var(--sky); /* Button inabadilika kuwa Sky Blue ikigusa */
+  color: var(--black);
+}
+
+
+
+.form-input {
   font-size: var(--fs-6);
   font-weight: var(--fw-400);
   padding: 13px 20px;
-  border: 1px solid var(--jet);
   border-radius: 14px;
   outline: none;
   transition: var(--transition-1);
@@ -728,8 +744,6 @@ textarea.form-input::-webkit-resizer { display: none; }
 .form-btn {
   position: relative;
   width: 100%;
-  background: var(--border-gradient-onyx);
-  color: var(--orange-yellow-crayola);
   display: flex;
   justify-content: center;
   align-items: center;
