@@ -36,7 +36,7 @@ With a strong combination of technical expertise and creative problem-solving, I
 
 **Core Expertise:** Tech Strategy, SEO/SEM, Web Development, Cybersecurity, Graphic & Brand Design
 
-**Tech Stack:** HTML, CSS, JavaScript | Node.js, PHP | WordPress, React | Google Analytics, SEMrush, Ahrefs | Kali Linux, Metasploit, Burp Suite, Wireshark | Adobe Photoshop, Illustrator, Figma
+**Tech Stack:** HTML, CSS, JavaScript | PHP | Google Analytics, SEMrush, Ahrefs | Kali Linux, Metasploit, Burp Suite, Wireshark | Adobe Photoshop, Illustrator, Figma
 
 ---
 
