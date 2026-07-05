@@ -195,3 +195,81 @@ function safeQuerySelector(selector, fallback = null) {
     return fallback;
   }
 }
+
+// -----------------------------------------------------------------
+// Graphics Design gallery lightbox
+// Clicking any "Graphics Design" project opens a full gallery viewer
+// with all graphics work, browsable with prev/next.
+// -----------------------------------------------------------------
+(function () {
+  const lightbox = document.querySelector('[data-lightbox]');
+  if (!lightbox) return;
+
+  const lightboxImg = lightbox.querySelector('[data-lightbox-img]');
+  const lightboxCaption = lightbox.querySelector('[data-lightbox-caption]');
+  const lightboxCounter = lightbox.querySelector('[data-lightbox-counter]');
+  const closeBtn = lightbox.querySelector('[data-lightbox-close]');
+  const prevBtn = lightbox.querySelector('[data-lightbox-prev]');
+  const nextBtn = lightbox.querySelector('[data-lightbox-next]');
+
+  const graphicsItems = Array.from(
+    document.querySelectorAll('.project-item[data-category="Graphics Design"]')
+  );
+
+  const gallery = graphicsItems.map((item) => {
+    const img = item.querySelector('img');
+    const titleEl = item.querySelector('.project-title');
+    return {
+      src: img ? img.getAttribute('src') : '',
+      alt: img ? img.getAttribute('alt') : '',
+      title: titleEl ? titleEl.textContent : ''
+    };
+  });
+
+  let currentIndex = 0;
+
+  function showImage(index) {
+    if (!gallery.length) return;
+    currentIndex = (index + gallery.length) % gallery.length;
+    const item = gallery[currentIndex];
+    lightboxImg.setAttribute('src', item.src);
+    lightboxImg.setAttribute('alt', item.alt);
+    lightboxCaption.textContent = item.title;
+    lightboxCounter.textContent = `${currentIndex + 1} / ${gallery.length}`;
+  }
+
+  function openLightbox(index) {
+    showImage(index);
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  graphicsItems.forEach((item, index) => {
+    const link = item.querySelector('a[data-lightbox-trigger]');
+    if (!link) return;
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      openLightbox(index);
+    });
+  });
+
+  if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+  if (prevBtn) prevBtn.addEventListener('click', () => showImage(currentIndex - 1));
+  if (nextBtn) nextBtn.addEventListener('click', () => showImage(currentIndex + 1));
+
+  lightbox.addEventListener('click', function (e) {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+    if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+  });
+})();
