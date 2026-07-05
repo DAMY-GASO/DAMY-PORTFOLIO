@@ -27,7 +27,9 @@ const translations = {
   about_header: { en: 'About me', sw: 'Kunihusu' },
   about_text: {
     en: `Welcome to my digital space!
-I'm a results-driven Cybersecurity Consultant with a diverse background in web development, SEO strategy, and cybersecurity. My work focuses on helping individuals, businesses, and organizations build secure, optimized, and high-performing digital systems that truly make an impact.`,
+I'm a passionate Cybersecurity Consultant, SEO & Content Marketing Specialist, Web Developer, and Graphic Designer dedicated to helping businesses build secure, modern, and impactful digital experiences.
+
+With a strong combination of technical expertise and creative problem-solving, I work on securing systems, improving online visibility, developing responsive websites, and creating visually engaging designs that strengthen brand identity. My goal is to deliver solutions that are not only functional and secure, but also user-friendly and results-driven.`,
     sw: `Karibu kwenye nafasi yangu ya kidijitali!
 Mimi ni Mshauri wa Usalama wa Mtandao mwenye msukumo wa matokeo, nikiwa na uzoefu mpana katika utengenezaji wa tovuti, mikakati ya SEO, na usalama wa mtandao. Kazi yangu inalenga kusaidia watu binafsi, biashara, na mashirika kujenga mifumo salama, iliyoboreshwa, na yenye ufanisi wa hali ya juu inayoleta matokeo halisi.`
   },
