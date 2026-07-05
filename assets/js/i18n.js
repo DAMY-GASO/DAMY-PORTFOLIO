@@ -7,8 +7,8 @@
 const translations = {
   // Sidebar
   profession: {
-    en: 'Web Developer & Graphics Designer <br> SEO & Content Marketing specialist | <br> Cyber Security Consultant ',
-    sw: 'Mtengenezaji wa Tovuti & Mbunifu wa michoro <br> Mtaalamu wa SEO na Masoko ya Maudhui| <br> Mshauri wa Usalama wa Mtandao '
+    en: 'Web Developer & Graphics Designer |<br> SEO & Content Marketing specialist | <br> Cyber Security Consultant ',
+    sw: 'Mtengenezaji wa Tovuti & Msanifu wa Picha |<br> Mtaalamu wa SEO na Masoko ya Maudhui | <br> Mshauri wa Usalama wa Mtandao '
   },
   show_contacts: { en: 'Show Contacts', sw: 'Onyesha Mawasiliano' },
   contact_email: { en: 'Email', sw: 'Barua Pepe' },
@@ -26,11 +26,9 @@ const translations = {
   // About
   about_header: { en: 'About me', sw: 'Kunihusu' },
   about_text: {
-    en: `Welcome to my digital space!
-I'm a passionate Cybersecurity Consultant, SEO & Content Marketing Specialist, Web Developer, and Graphic Designer dedicated to helping businesses build secure, modern, and impactful digital experiences.
-
-With a strong combination of technical expertise and creative problem-solving, I work on securing systems, improving online visibility, developing responsive websites, and creating visually engaging designs that strengthen brand identity. My goal is to deliver solutions that are not only functional and secure, but also user-friendly and results-driven.`,
-    sw: `Karibu kwenye nafasi yangu ya kidijitali!
+    en: `Welcome to my digital space!.
+I'm a results-driven Cybersecurity Consultant with a diverse background in web development, SEO strategy, and cybersecurity. My work focuses on helping individuals, businesses, and organizations build secure, optimized, and high-performing digital systems that truly make an impact.`,
+    sw: `Karibu kwenye nafasi yangu ya kidijitali!.
 Mimi ni Mshauri wa Usalama wa Mtandao mwenye msukumo wa matokeo, nikiwa na uzoefu mpana katika utengenezaji wa tovuti, mikakati ya SEO, na usalama wa mtandao. Kazi yangu inalenga kusaidia watu binafsi, biashara, na mashirika kujenga mifumo salama, iliyoboreshwa, na yenye ufanisi wa hali ya juu inayoleta matokeo halisi.`
   },
 
@@ -41,7 +39,7 @@ Mimi ni Mshauri wa Usalama wa Mtandao mwenye msukumo wa matokeo, nikiwa na uzoef
     en: 'I build and maintain responsive, fast, and SEO-friendly websites using HTML, CSS, JavaScript, and modern frameworks. My goal is to create user-centered digital experiences that perform flawlessly across devices.',
     sw: 'Ninajenga na kudumisha tovuti zinazojibadilisha (responsive), za haraka, na rafiki kwa SEO kwa kutumia HTML, CSS, JavaScript, na mifumo ya kisasa. Lengo langu ni kutengeneza uzoefu wa kidijitali unaomlenga mtumiaji na unaofanya kazi vizuri kwenye vifaa vyote.'
   },
-  service2_title: { en: ' SEO & Content Marketing', sw: ' SEO na Masoko ya Maudhui' },
+  service2_title: { en: 'SEO & Content Marketing', sw: ' SEO na Masoko ya Maudhui' },
   service2_text: {
     en: 'As an SEO Specialist, I design data-driven strategies that boost visibility and organic traffic. I create and optimize content that connects with audiences while aligning with search engine best practices.',
     sw: 'Kama Mtaalamu wa SEO, ninabuni mikakati inayotegemea data ili kuongeza mwonekano na trafiki ya kiasili. Ninatengeneza na kuboresha maudhui yanayowasiliana na hadhira huku yakizingatia kanuni bora za injini za utafutaji.'
@@ -56,7 +54,7 @@ Mimi ni Mshauri wa Usalama wa Mtandao mwenye msukumo wa matokeo, nikiwa na uzoef
     en: 'With a strong foundation in ethical hacking and cyber awareness, I assess system vulnerabilities, conduct penetration testing, and deliver tailored cybersecurity solutions to safeguard digital assets.',
     sw: 'Nikiwa na msingi imara katika ethical hacking na uelewa wa usalama wa mtandao, ninachunguza udhaifu wa mifumo, kufanya penetration testing, na kutoa suluhisho maalum za usalama ili kulinda mali za kidijitali.'
   },
-  service5_title: { en: ' Graphics Design & Branding', sw: ' Usanifu wa Picha na Brand' },
+  service5_title: { en: 'Graphics Design & Branding', sw: ' Usanifu wa Picha na Brand' },
   service5_text: {
     en: 'I create UI/UX-focused visuals, brand identity, and creative designs that make businesses stand out. From logos to full brand kits, I deliver graphics that strengthen visibility and leave a lasting impression.',
     sw: 'Ninatengeneza picha zinazolenga UI/UX, utambulisho wa brand, na usanifu wa kibunifu unaofanya biashara zisimame wazi. Kuanzia logo hadi vifurushi kamili vya brand, ninatoa michoro inayoimarisha mwonekano na kuacha athari ya kudumu.'
@@ -95,15 +93,20 @@ Mimi ni Mshauri wa Usalama wa Mtandao mwenye msukumo wa matokeo, nikiwa na uzoef
     en: 'Conduct vulnerability assessments and penetration tests to identify security gaps, then deliver clear, actionable remediation reports to clients.',
     sw: 'Ninafanya tathmini za udhaifu na penetration testing ili kubaini mapengo ya usalama, kisha kutoa ripoti wazi na za vitendo za urekebishaji kwa wateja.'
   },
+  exp6_title: { en: 'Graphics Design & Branding', sw: 'Usanifu wa Picha na Brand' },
+  exp6_text: {
+    en: 'Design logos, brand identity kits, social media graphics, and UI/UX mockups using Adobe Photoshop and Illustrator, and produce motion graphics and video intros with Adobe After Effects for clients across various industries.',
+    sw: 'Ninabuni logo, vifurushi vya utambulisho wa brand, michoro ya mitandao ya kijamii, na mockups za UI/UX kwa kutumia Adobe Photoshop na Illustrator, na kutengeneza motion graphics na video intros kwa Adobe After Effects kwa wateja katika sekta mbalimbali.'
+  },
 
   skills_title: { en: 'My skills', sw: 'Ujuzi Wangu' },
   skill_vuln: { en: 'Vulnerability assessment', sw: 'Tathmini ya Udhaifu' },
   skill_mysql: { en: 'MYSQL database', sw: 'Hifadhidata ya MYSQL' },
   skill_js: { en: 'Javascript', sw: 'Javascript' },
-  skill_react: { en: 'React Js', sw: 'React Js' },
-  skill_node: { en: 'Node Js & Express Js', sw: 'Node Js na Express Js' },
   skill_htmlcss: { en: 'HTML & CSS', sw: 'HTML na CSS' },
   skill_phpjava: { en: 'PHP & Java', sw: 'PHP na Java' },
+  skill_photoshop_illustrator: { en: 'Adobe Photoshop & Illustrator', sw: 'Adobe Photoshop na Illustrator' },
+  skill_aftereffects: { en: 'Adobe After Effects (Motion Graphics)', sw: 'Adobe After Effects (Michoro ya Mwendo)' },
 
   cv_download_title: { en: 'Download My CV', sw: 'Pakua CV Yangu' },
 
