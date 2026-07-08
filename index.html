@@ -161,7 +161,7 @@
       </nav>
 
 
-      <!--
+            <!--
         - #ABOUT
       -->
 
@@ -172,9 +172,14 @@
 
         <section class="about-text">
           <p data-i18n="about_text">
-            Welcome to my digital space!.
-I'm a results-driven Cybersecurity Consultant with a diverse background in web development, SEO strategy, and cybersecurity. My work focuses on helping individuals, businesses, and organizations build secure, optimized, and high-performing digital systems that truly make an impact.
+            I am a dedicated technology and creative expert with a unique ability to bridge the gap between cybersecurity, digital strategy, and brand identity. My mission is to empower businesses and organizations to build an online presence that is secure, impactful, and globally recognized. I am passionate about leveraging technology and creative design to solve complex business challenges with maximum efficiency.
           </p>
+
+          <a href="#" class="form-btn" style="display:inline-flex; width:auto; margin-top:15px;"
+             onclick="document.querySelector('.navbar-link[data-target=portfolio]').click(); return false;">
+            <ion-icon name="briefcase-outline"></ion-icon>
+            <span data-i18n="view_projects_btn">View My Projects</span>
+          </a>
         </section>
 
 
@@ -183,18 +188,18 @@ I'm a results-driven Cybersecurity Consultant with a diverse background in web d
         -->
 
         <section class="service">
-          <h3 class="h3 service-title" data-i18n="service_title">What i'm doing</h3>
+          <h3 class="h3 service-title" data-i18n="service_title">What I do</h3>
           <ul class="service-list">
 
             <li class="service-item">
               <div class="service-icon-box">
-                <ion-icon name="code-slash-outline"></ion-icon>
+                <ion-icon name="shield-checkmark-outline"></ion-icon>
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title" data-i18n="service1_title">Web development & solutions</h4>
+                <h4 class="h4 service-item-title" data-i18n="service1_title">Cybersecurity Consultant</h4>
                 <p class="service-item-text" data-i18n="service1_text">
-I build and maintain responsive, fast, and SEO-friendly websites using HTML, CSS, JavaScript, and modern frameworks. My goal is to create user-centered digital experiences that perform flawlessly across devices.
+                  I ensure your company's information systems are resilient against cyber threats. I conduct comprehensive risk assessments and implement robust strategies to protect sensitive company and client data.
                 </p>
               </div>
             </li>
@@ -205,36 +210,9 @@ I build and maintain responsive, fast, and SEO-friendly websites using HTML, CSS
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title" data-i18n="service2_title">SEO & Content Marketing</h4>
+                <h4 class="h4 service-item-title" data-i18n="service2_title">SEO & Content Marketing Specialist</h4>
                 <p class="service-item-text" data-i18n="service2_text">
-                 
-As an SEO Specialist, I design data-driven strategies that boost visibility and organic traffic. I create and optimize content that connects with audiences while aligning with search engine best practices.
-                </p>
-              </div>
-            </li>
-
-            <li class="service-item">
-              <div class="service-icon-box">
-                <ion-icon name="shield-checkmark-outline"></ion-icon>
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title" data-i18n="service3_title">Cybersecurity Consulting</h4>
-                <p class="service-item-text" data-i18n="service3_text">
-I help businesses adopt modern technology solutions to enhance efficiency and scalability in security from system integration to workflow automation and digital transformation strategies.
-                </p>
-              </div>
-            </li>
-
-            <li class="service-item">
-              <div class="service-icon-box">
-                <ion-icon name="bug-outline"></ion-icon>
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title" data-i18n="service4_title">Web security & Penetration Testing</h4>
-                <p class="service-item-text" data-i18n="service4_text">
-With a strong foundation in ethical hacking and cyber awareness, I assess system vulnerabilities, conduct penetration testing, and deliver tailored cybersecurity solutions to safeguard digital assets.
+                  I optimize your digital footprint to ensure high visibility on search engines like Google, driving organic traffic to your business. I create high-quality, targeted content that boosts conversion rates and builds lasting trust with your audience.
                 </p>
               </div>
             </li>
@@ -245,9 +223,22 @@ With a strong foundation in ethical hacking and cyber awareness, I assess system
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title" data-i18n="service5_title">Graphics Design & Branding</h4>
-                <p class="service-item-text" data-i18n="service5_text">
-I create UI/UX-focused visuals, brand identity, and creative designs that make businesses stand out. From logos to full brand kits, I deliver graphics that strengthen visibility and leave a lasting impression.
+                <h4 class="h4 service-item-title" data-i18n="service3_title">Graphic & Brand Identity Designer</h4>
+                <p class="service-item-text" data-i18n="service3_text">
+                  I build the visual face of your brand. From logos and color palettes to marketing collateral, I ensure your brand maintains a modern, professional, and memorable aesthetic.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <ion-icon name="code-slash-outline"></ion-icon>
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title" data-i18n="service4_title">Website Developer</h4>
+                <p class="service-item-text" data-i18n="service4_text">
+                  I build modern, high-performance websites that are fully responsive across mobile and desktop devices. My development process focuses not just on technical functionality, but on achieving specific business objectives.
                 </p>
               </div>
             </li>
@@ -272,6 +263,26 @@ I create UI/UX-focused visuals, brand identity, and creative designs that make b
               <a href="#">
                 <img src="./assets/images/kan tech.jpg" alt="KAN TECH logo">
               </a>
+            </li>
+          </ul>
+        </section>
+
+        <!--
+          - client reviews
+        -->
+
+        <section class="testimonials">
+          <h3 class="h3 clients-title" data-i18n="testimonials_title">Client Reviews</h3>
+          <ul class="testimonials-list" style="display:flex; flex-direction:column; gap:16px; margin-top:15px;">
+            <li class="content-card" style="padding:18px 20px; border-radius:14px;">
+              <p style="font-style:italic; color:#cfcfe0;">"Damas delivered our company website fast and it ranks well on Google now. Excellent work."</p>
+              <p style="margin-top:10px; font-weight:600; color:#e8e8ef;">Client Name</p>
+              <p style="font-size:14px; color:#a6a6b7;">Company / Role</p>
+            </li>
+            <li class="content-card" style="padding:18px 20px; border-radius:14px;">
+              <p style="font-style:italic; color:#cfcfe0;">"Professional vulnerability assessment with a clear, actionable report. Highly recommended."</p>
+              <p style="margin-top:10px; font-weight:600; color:#e8e8ef;">Client Name 2</p>
+              <p style="font-size:14px; color:#a6a6b7;">Company / Role</p>
             </li>
           </ul>
         </section>
@@ -307,6 +318,30 @@ I create UI/UX-focused visuals, brand identity, and creative designs that make b
           </ol>
         </section>
 
+        <!--
+          - certifications
+        -->
+
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="ribbon-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3" data-i18n="certifications_title">Certifications</h3>
+          </div>
+
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title" data-i18n="cert1_title">Digital Marketing Certification</h4>
+              <span>2026</span>
+              <p class="timeline-text" data-i18n="cert1_text">
+                Certified in Digital Marketing (SEO, Content Marketing, Social Media Advertising) — [weka jina la taasisi/platform hapa].
+              </p>
+            </li>
+          </ol>
+        </section>
+
         <section class="timeline">
           <div class="title-wrapper">
             <div class="icon-box">
@@ -326,7 +361,7 @@ Diagnosed and resolved hardware, software, and network issues for clients, ensur
               </p>
             </li>
 
-<li class="timeline-item">
+            <li class="timeline-item">
               <h4 class="h4 timeline-item-title" data-i18n="exp2_title">Digital marketing</h4>
               <span>2025 — present</span>
               <p class="timeline-text" data-i18n="exp2_text">
@@ -372,13 +407,11 @@ Design logos, brand identity kits, social media graphics, and UI/UX mockups usin
           <h3 class="h3 skills-title" data-i18n="skills_title">My skills</h3>
           <ul class="skills-list content-card">
 
-
             <li class="skills-item">
               <div class="title-wrapper">
                 <h5 class="h5" data-i18n="skill_vuln">Vulnerability assessment</h5>
                 <data value="85">85%</data>
               </div>
-
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 85%;"></div>
               </div>
@@ -389,30 +422,26 @@ Design logos, brand identity kits, social media graphics, and UI/UX mockups usin
                 <h5 class="h5" data-i18n="skill_mysql">MYSQL database</h5>
                 <data value="65">65%</data>
               </div>
-
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 65%;"></div>
               </div>
             </li>
 
-              <li class="skills-item">
+            <li class="skills-item">
               <div class="title-wrapper">
                 <h5 class="h5" data-i18n="skill_js">Javascript</h5>
                 <data value="70">70%</data>
               </div>
-
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 70%;"></div>
               </div>
             </li>
-
 
             <li class="skills-item">
               <div class="title-wrapper">
                 <h5 class="h5" data-i18n="skill_htmlcss">HTML & CSS</h5>
                 <data value="90">90%</data>
               </div>
-
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 90%;"></div>
               </div>
@@ -423,7 +452,6 @@ Design logos, brand identity kits, social media graphics, and UI/UX mockups usin
                 <h5 class="h5" data-i18n="skill_phpjava">PHP & Java</h5>
                 <data value="55">55%</data>
               </div>
-
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 55%;"></div>
               </div>
@@ -434,7 +462,6 @@ Design logos, brand identity kits, social media graphics, and UI/UX mockups usin
                 <h5 class="h5" data-i18n="skill_photoshop_illustrator">Adobe Photoshop & Illustrator</h5>
                 <data value="80">80%</data>
               </div>
-
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 80%;"></div>
               </div>
@@ -445,24 +472,54 @@ Design logos, brand identity kits, social media graphics, and UI/UX mockups usin
                 <h5 class="h5" data-i18n="skill_aftereffects">Adobe After Effects (Motion Graphics)</h5>
                 <data value="60">60%</data>
               </div>
-
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 60%;"></div>
               </div>
             </li>
+
+            <!-- SEO Tools -->
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5" data-i18n="skill_gsc">Google Search Console</h5>
+                <data value="80">80%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 80%;"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5" data-i18n="skill_ga">Google Analytics</h5>
+                <data value="75">75%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 75%;"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5" data-i18n="skill_keywordresearch">SEO & Keyword Research</h5>
+                <data value="85">85%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 85%;"></div>
+              </div>
+            </li>
           </ul>
 
-<section class="cv-download">
-  <div class="separator"></div>
-  <h3 class="h3 form-title" style="margin-top: 20px;" data-i18n="cv_download_title">Download My CV</h3>
-  <a href="./assets/DAMAS G.pdf" download class="form-btn" style="display: inline-flex; width: auto; margin-top: 15px;">
-    <ion-icon name="download-outline"></ion-icon>
-    <span data-i18n="cv_download_link">Download CV (PDF)</span>
-  </a>
-</section>
+          <section class="cv-download">
+            <div class="separator"></div>
+            <h3 class="h3 form-title" style="margin-top: 20px;" data-i18n="cv_download_title">Download My CV</h3>
+            <a href="./assets/DAMAS G.pdf" download class="form-btn" style="display: inline-flex; width: auto; margin-top: 15px;">
+              <ion-icon name="download-outline"></ion-icon>
+              <span data-i18n="cv_download_link">Download CV (PDF)</span>
+            </a>
+          </section>
         </section>
-</article>
-
+      </article>
+         
 
 
       <!--
