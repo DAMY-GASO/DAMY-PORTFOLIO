@@ -43,6 +43,58 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Floating WhatsApp button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      width: 56px;
+      height: 56px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+      z-index: 999;
+      transition: transform 0.2s ease;
+    }
+    .whatsapp-float:hover { transform: scale(1.08); }
+    .whatsapp-float ion-icon { font-size: 32px; color: #fff; }
+
+    /* Leave a review button */
+    .leave-review-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 15px;
+      width: auto;
+    }
+
+    /* Photo upload field on contact form */
+    .file-upload-label {
+      display: block;
+      color: var(--light-gray-70, #b7c6d8);
+      font-size: var(--fs-7, 14px);
+      margin: 15px 0 6px;
+    }
+    input[type="file"].form-input {
+      padding: 12px;
+      cursor: pointer;
+    }
+
+    /* Dynamic (Google Sheet) reviews */
+    #dynamic-testimonials-list { margin-top: 16px; }
+    .testimonial-avatar-img {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+  </style>
 </head>
 
 <body>
@@ -161,7 +213,7 @@
       </nav>
 
 
-            <!--
+      <!--
         - #ABOUT
       -->
 
@@ -174,12 +226,6 @@
           <p data-i18n="about_text">
             I am a dedicated technology and creative expert with a unique ability to bridge the gap between cybersecurity, digital strategy, and brand identity. My mission is to empower businesses and organizations to build an online presence that is secure, impactful, and globally recognized. I am passionate about leveraging technology and creative design to solve complex business challenges with maximum efficiency.
           </p>
-
-          <a href="#" class="form-btn" style="display:inline-flex; width:auto; margin-top:15px;"
-             onclick="document.querySelector('.navbar-link[data-target=portfolio]').click(); return false;">
-            <ion-icon name="briefcase-outline"></ion-icon>
-            <span data-i18n="view_projects_btn">View My Projects</span>
-          </a>
         </section>
 
 
@@ -199,7 +245,7 @@
               <div class="service-content-box">
                 <h4 class="h4 service-item-title" data-i18n="service1_title">Cybersecurity Consultant</h4>
                 <p class="service-item-text" data-i18n="service1_text">
-                  I ensure your company's information systems are resilient against cyber threats. I conduct comprehensive risk assessments and implement robust strategies to protect sensitive company and client data.
+I ensure your company's information systems are resilient against cyber threats. I conduct comprehensive risk assessments and implement robust strategies to protect sensitive company and client data.
                 </p>
               </div>
             </li>
@@ -212,7 +258,7 @@
               <div class="service-content-box">
                 <h4 class="h4 service-item-title" data-i18n="service2_title">SEO & Content Marketing Specialist</h4>
                 <p class="service-item-text" data-i18n="service2_text">
-                  I optimize your digital footprint to ensure high visibility on search engines like Google, driving organic traffic to your business. I create high-quality, targeted content that boosts conversion rates and builds lasting trust with your audience.
+I optimize your digital footprint to ensure high visibility on search engines like Google, driving organic traffic to your business. I create high-quality, targeted content that boosts conversion rates and builds lasting trust with your audience.
                 </p>
               </div>
             </li>
@@ -225,7 +271,7 @@
               <div class="service-content-box">
                 <h4 class="h4 service-item-title" data-i18n="service3_title">Graphic & Brand Identity Designer</h4>
                 <p class="service-item-text" data-i18n="service3_text">
-                  I build the visual face of your brand. From logos and color palettes to marketing collateral, I ensure your brand maintains a modern, professional, and memorable aesthetic.
+I build the visual face of your brand. From logos and color palettes to marketing collateral, I ensure your brand maintains a modern, professional, and memorable aesthetic.
                 </p>
               </div>
             </li>
@@ -238,53 +284,57 @@
               <div class="service-content-box">
                 <h4 class="h4 service-item-title" data-i18n="service4_title">Website Developer</h4>
                 <p class="service-item-text" data-i18n="service4_text">
-                  I build modern, high-performance websites that are fully responsive across mobile and desktop devices. My development process focuses not just on technical functionality, but on achieving specific business objectives.
+I build modern, high-performance websites that are fully responsive across mobile and desktop devices. My development process focuses not just on technical functionality, but on achieving specific business objectives.
                 </p>
               </div>
             </li>
           </ul>
+          <a href="#" class="form-btn" style="display:inline-flex; width:auto; margin-top:15px;"
+             onclick="document.querySelector('.navbar-link[data-target=portfolio]').click(); return false;">
+            <ion-icon name="briefcase-outline"></ion-icon>
+            <span data-i18n="view_projects_btn">View My Projects</span>
+          </a>
         </section>
 
 
         <!--
-          - clients
-        -->
-
-        <section class="clients">
-          <h3 class="h3 clients-title" data-i18n="clients_title">My Sponsors</h3>
-          <ul class="clients-list has-scrollbar">
-            <li class="clients-item">
-              <a href="https://wa.me/message/I3LNVMV46KP5H1">
-                <img src="./assets/images/DDD1.png.jpg" alt="DAMYGASO TECH SOLUTIONS logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/kan tech.jpg" alt="KAN TECH logo">
-              </a>
-            </li>
-          </ul>
-        </section>
-
-        <!--
-          - client reviews
+          - testimonials / client reviews
         -->
 
         <section class="testimonials">
           <h3 class="h3 clients-title" data-i18n="testimonials_title">Client Reviews</h3>
-          <ul class="testimonials-list" style="display:flex; flex-direction:column; gap:16px; margin-top:15px;">
-            <li class="content-card" style="padding:18px 20px; border-radius:14px;">
-              <p style="font-style:italic; color:#cfcfe0;">"Damas delivered our company website fast and it ranks well on Google now. Excellent work."</p>
-              <p style="margin-top:10px; font-weight:600; color:#e8e8ef;">Client Name</p>
-              <p style="font-size:14px; color:#a6a6b7;">Company / Role</p>
+          <ul class="testimonials-list">
+            <li class="testimonial-item">
+              <p class="testimonial-text" data-i18n="testimonial1_text">"Damas delivered our company website fast and it now ranks well on Google. Excellent, professional work from start to finish."</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar"><ion-icon name="person-circle-outline"></ion-icon></div>
+                <div>
+                  <p class="testimonial-name" data-i18n="testimonial1_name">Client Name</p>
+                  <p class="testimonial-role" data-i18n="testimonial1_role">Company / Role</p>
+                </div>
+              </div>
             </li>
-            <li class="content-card" style="padding:18px 20px; border-radius:14px;">
-              <p style="font-style:italic; color:#cfcfe0;">"Professional vulnerability assessment with a clear, actionable report. Highly recommended."</p>
-              <p style="margin-top:10px; font-weight:600; color:#e8e8ef;">Client Name 2</p>
-              <p style="font-size:14px; color:#a6a6b7;">Company / Role</p>
+
+            <li class="testimonial-item">
+              <p class="testimonial-text" data-i18n="testimonial2_text">"A thorough vulnerability assessment with a clear, actionable report. Highly recommended for any business serious about security."</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar"><ion-icon name="person-circle-outline"></ion-icon></div>
+                <div>
+                  <p class="testimonial-name" data-i18n="testimonial2_name">Client Name</p>
+                  <p class="testimonial-role" data-i18n="testimonial2_role">Company / Role</p>
+                </div>
+              </div>
             </li>
           </ul>
+
+          <!-- Live reviews loaded automatically from Google Sheet -->
+          <ul class="testimonials-list" id="dynamic-testimonials-list"></ul>
+
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSePHe9DaUGmg2th-hIcoK8SXjBEesF_-BpPYVUBKvzarWPPMA/viewform?usp=dialog" target="_blank" rel="noopener noreferrer"
+             class="form-btn leave-review-btn">
+            <ion-icon name="create-outline"></ion-icon>
+            <span data-i18n="leave_review_title">Leave a Review</span>
+          </a>
         </section>
       </article>
 
@@ -318,10 +368,6 @@
           </ol>
         </section>
 
-        <!--
-          - certifications
-        -->
-
         <section class="timeline">
           <div class="title-wrapper">
             <div class="icon-box">
@@ -333,10 +379,10 @@
 
           <ol class="timeline-list">
             <li class="timeline-item">
-              <h4 class="h4 timeline-item-title" data-i18n="cert1_title">Digital Marketing Certification</h4>
+              <h4 class="h4 timeline-item-title" data-i18n="cert1_title">UniAthena partnership with Cambridge International Qualifications</h4>
               <span>2026</span>
               <p class="timeline-text" data-i18n="cert1_text">
-                Certified in Digital Marketing (SEO, Content Marketing, Social Media Advertising) — [weka jina la taasisi/platform hapa].
+                Certified in Digital Marketing, covering SEO, content marketing, and social media advertising.
               </p>
             </li>
           </ol>
@@ -361,7 +407,7 @@ Diagnosed and resolved hardware, software, and network issues for clients, ensur
               </p>
             </li>
 
-            <li class="timeline-item">
+<li class="timeline-item">
               <h4 class="h4 timeline-item-title" data-i18n="exp2_title">Digital marketing</h4>
               <span>2025 — present</span>
               <p class="timeline-text" data-i18n="exp2_text">
@@ -407,11 +453,36 @@ Design logos, brand identity kits, social media graphics, and UI/UX mockups usin
           <h3 class="h3 skills-title" data-i18n="skills_title">My skills</h3>
           <ul class="skills-list content-card">
 
+
+<li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5" data-i18n="skill_sm">Social media management</h5>
+                <data value="90">90%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 90%;"></div>
+              </div>
+            </li>
+            
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5" data-i18n="skill_cont">Content Writing</h5>
+                <data value="95">95%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 95%;"></div>
+              </div>
+            </li>
+            
+
             <li class="skills-item">
               <div class="title-wrapper">
                 <h5 class="h5" data-i18n="skill_vuln">Vulnerability assessment</h5>
                 <data value="85">85%</data>
               </div>
+
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 85%;"></div>
               </div>
@@ -422,26 +493,30 @@ Design logos, brand identity kits, social media graphics, and UI/UX mockups usin
                 <h5 class="h5" data-i18n="skill_mysql">MYSQL database</h5>
                 <data value="65">65%</data>
               </div>
+
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 65%;"></div>
               </div>
             </li>
 
-            <li class="skills-item">
+              <li class="skills-item">
               <div class="title-wrapper">
                 <h5 class="h5" data-i18n="skill_js">Javascript</h5>
                 <data value="70">70%</data>
               </div>
+
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 70%;"></div>
               </div>
             </li>
+
 
             <li class="skills-item">
               <div class="title-wrapper">
                 <h5 class="h5" data-i18n="skill_htmlcss">HTML & CSS</h5>
                 <data value="90">90%</data>
               </div>
+
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 90%;"></div>
               </div>
@@ -452,6 +527,7 @@ Design logos, brand identity kits, social media graphics, and UI/UX mockups usin
                 <h5 class="h5" data-i18n="skill_phpjava">PHP & Java</h5>
                 <data value="55">55%</data>
               </div>
+
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 55%;"></div>
               </div>
@@ -462,6 +538,7 @@ Design logos, brand identity kits, social media graphics, and UI/UX mockups usin
                 <h5 class="h5" data-i18n="skill_photoshop_illustrator">Adobe Photoshop & Illustrator</h5>
                 <data value="80">80%</data>
               </div>
+
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 80%;"></div>
               </div>
@@ -472,12 +549,12 @@ Design logos, brand identity kits, social media graphics, and UI/UX mockups usin
                 <h5 class="h5" data-i18n="skill_aftereffects">Adobe After Effects (Motion Graphics)</h5>
                 <data value="60">60%</data>
               </div>
+
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 60%;"></div>
               </div>
             </li>
 
-            <!-- SEO Tools -->
             <li class="skills-item">
               <div class="title-wrapper">
                 <h5 class="h5" data-i18n="skill_gsc">Google Search Console</h5>
@@ -509,17 +586,17 @@ Design logos, brand identity kits, social media graphics, and UI/UX mockups usin
             </li>
           </ul>
 
-          <section class="cv-download">
-            <div class="separator"></div>
-            <h3 class="h3 form-title" style="margin-top: 20px;" data-i18n="cv_download_title">Download My CV</h3>
-            <a href="./assets/DAMAS G.pdf" download class="form-btn" style="display: inline-flex; width: auto; margin-top: 15px;">
-              <ion-icon name="download-outline"></ion-icon>
-              <span data-i18n="cv_download_link">Download CV (PDF)</span>
-            </a>
-          </section>
+<section class="cv-download">
+  <div class="separator"></div>
+  <h3 class="h3 form-title" style="margin-top: 20px;" data-i18n="cv_download_title">Download My CV</h3>
+  <a href="./assets/DAMAS G.pdf" download class="form-btn" style="display: inline-flex; width: auto; margin-top: 15px;">
+    <ion-icon name="download-outline"></ion-icon>
+    <span data-i18n="cv_download_link">Download CV (PDF)</span>
+  </a>
+</section>
         </section>
-      </article>
-         
+</article>
+
 
 
       <!--
@@ -549,6 +626,14 @@ Design logos, brand identity kits, social media graphics, and UI/UX mockups usin
             <li class="filter-item">
               <button data-filter-btn data-filter-value="Graphics Design" data-i18n="filter_graphics">Graphics Design</button>
             </li>
+
+            <li class="filter-item">
+              <button data-filter-btn data-filter-value="SEO & Content Marketing" data-i18n="filter_seo">SEO & Content Marketing</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn data-filter-value="Cyber Security" data-i18n="filter_cyber">Cyber Security</button>
+            </li>
           </ul>
 
           <div class="filter-select-box">
@@ -577,6 +662,14 @@ Design logos, brand identity kits, social media graphics, and UI/UX mockups usin
                 <button data-select-item data-filter-value="Graphics Design" data-i18n="filter_graphics">Graphics Design</button>
               </li>
 
+              <li class="select-item">
+                <button data-select-item data-filter-value="SEO & Content Marketing" data-i18n="filter_seo">SEO & Content Marketing</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item data-filter-value="Cyber Security" data-i18n="filter_cyber">Cyber Security</button>
+              </li>
+
             </ul>
           </div>
 
@@ -589,11 +682,12 @@ Design logos, brand identity kits, social media graphics, and UI/UX mockups usin
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/Screenshot (97).png" alt="DAMYGASO TECH SOLUTIONS website screenshot" loading="lazy">
+                  <img src="./assets/images/Whatsapp cover.png" alt="DAMYGASO TECH SOLUTIONS website screenshot" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">DAMYGASO TECH SOLUTIONS</h3>
                 <p class="project-category" data-i18n="filter_webdev">Web development</p>
+                <p class="project-problem" data-i18n="pp_damygaso">Challenge: the company needed a professional online presence to showcase its services clearly. Solution: I built a fast, SEO-friendly business website that improved credibility and inquiries.</p>
               </a>
             </li>
 
@@ -604,11 +698,12 @@ Design logos, brand identity kits, social media graphics, and UI/UX mockups usin
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/My portfolio.jpeg" alt="Personal portfolio screenshot" loading="lazy">
+                  <img src="./assets/images/id.png" alt="Personal portfolio screenshot" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">My portfolio</h3>
                 <p class="project-category" data-i18n="filter_webdev">Web development</p>
+                <p class="project-problem" data-i18n="pp_myportfolio">Challenge: needed a single place to present multi-disciplinary skills (dev, SEO, security, design) clearly. Solution: built this responsive, bilingual portfolio with clear service breakdown.</p>
               </a>
             </li>
 
@@ -624,6 +719,7 @@ Design logos, brand identity kits, social media graphics, and UI/UX mockups usin
 
                 <h3 class="project-title">ENCRYPTION-DECRYPTION</h3>
                 <p class="project-category" data-i18n="filter_apps">Applications</p>
+                <p class="project-problem" data-i18n="pp_encryption">Challenge: sensitive data needed protection from unauthorized access. Solution: built an app implementing secure encryption/decryption for safe data handling.</p>
               </a>
             </li>
 
@@ -639,6 +735,7 @@ Design logos, brand identity kits, social media graphics, and UI/UX mockups usin
 
                 <h3 class="project-title">BLUETOOTH CHATTING APP</h3>
                 <p class="project-category" data-i18n="filter_apps">Applications</p>
+                <p class="project-problem" data-i18n="pp_bluetooth">Challenge: enabling communication without internet access in low-connectivity areas. Solution: developed a chat app using Bluetooth for offline peer-to-peer messaging.</p>
               </a>
             </li>
 
@@ -654,6 +751,7 @@ Design logos, brand identity kits, social media graphics, and UI/UX mockups usin
 
                 <h3 class="project-title">DAMYGASO VOTING APPLICATION</h3>
                 <p class="project-category" data-i18n="filter_apps">Applications</p>
+                <p class="project-problem" data-i18n="pp_voting">Challenge: elections needed to be transparent, fast, and tamper-resistant. Solution: built a secure digital voting system with real-time result tracking.</p>
               </a>
             </li>
 
@@ -670,6 +768,7 @@ Design logos, brand identity kits, social media graphics, and UI/UX mockups usin
 
                 <h3 class="project-title">ADVENTURE TOURISM</h3>
                 <p class="project-category" data-i18n="filter_webdev">Web development</p>
+                <p class="project-problem" data-i18n="pp_tourism">Challenge: a tourism company needed an engaging way to showcase destinations and attract bookings. Solution: designed a visually rich, fast-loading website highlighting tours and experiences.</p>
 
               </a>
             </li>
@@ -687,6 +786,7 @@ Design logos, brand identity kits, social media graphics, and UI/UX mockups usin
 
                 <h3 class="project-title">ATTENDANCE MANAGEMENT SYSTEM</h3>
                 <p class="project-category" data-i18n="filter_webdev">Web development</p>
+                <p class="project-problem" data-i18n="pp_attendance">Challenge: manual attendance tracking was slow and error-prone. Solution: built a digital system that automates recording and reporting of attendance.</p>
 
              </a>
             </li>
@@ -708,6 +808,7 @@ Design logos, brand identity kits, social media graphics, and UI/UX mockups usin
 
                 <h3 class="project-title">Logo Design</h3>
                 <p class="project-category" data-i18n="filter_graphics">Graphics Design</p>
+                <p class="project-problem" data-i18n="pp_logo2">Brief: design a distinctive logo reflecting the client's brand personality.</p>
               </a>
             </li>
 
@@ -723,6 +824,7 @@ Design logos, brand identity kits, social media graphics, and UI/UX mockups usin
 
                 <h3 class="project-title">Logo Design</h3>
                 <p class="project-category" data-i18n="filter_graphics">Graphics Design</p>
+                <p class="project-problem" data-i18n="pp_logo3">Brief: create a clean, versatile logo usable across print and digital media.</p>
               </a>
             </li>
 
@@ -738,6 +840,7 @@ Design logos, brand identity kits, social media graphics, and UI/UX mockups usin
 
                 <h3 class="project-title">Logo Design</h3>
                 <p class="project-category" data-i18n="filter_graphics">Graphics Design</p>
+                <p class="project-problem" data-i18n="pp_logo4">Brief: design a modern logo representing the client's tech-focused brand.</p>
               </a>
             </li>
 
@@ -753,6 +856,7 @@ Design logos, brand identity kits, social media graphics, and UI/UX mockups usin
 
                 <h3 class="project-title">Logo Design</h3>
                 <p class="project-category" data-i18n="filter_graphics">Graphics Design</p>
+                <p class="project-problem" data-i18n="pp_logo1">Brief: create a memorable, professional logo for the client's brand identity.</p>
               </a>
             </li>
 
@@ -768,6 +872,7 @@ Design logos, brand identity kits, social media graphics, and UI/UX mockups usin
 
                 <h3 class="project-title">Brand Identity Kit</h3>
                 <p class="project-category" data-i18n="filter_graphics">Graphics Design</p>
+                <p class="project-problem" data-i18n="pp_brandkit">Brief: build a cohesive brand identity kit (colors, typography, assets) for consistent brand presentation.</p>
               </a>
             </li>
 
@@ -778,11 +883,12 @@ Design logos, brand identity kits, social media graphics, and UI/UX mockups usin
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/IT SPECIALIST.png" alt="Social media post design sample" loading="lazy">
+                  <img src="./assets/images/IT SPECIALIST1.png" alt="Social media post design sample" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">Social Media Design</h3>
                 <p class="project-category" data-i18n="filter_graphics">Graphics Design</p>
+                <p class="project-problem" data-i18n="pp_social1">Brief: design engaging social media content to boost audience engagement.</p>
               </a>
             </li>
 
@@ -798,6 +904,7 @@ Design logos, brand identity kits, social media graphics, and UI/UX mockups usin
 
                 <h3 class="project-title">Social Media Design</h3>
                 <p class="project-category" data-i18n="filter_graphics">Graphics Design</p>
+                <p class="project-problem" data-i18n="pp_social2">Brief: create a striking social media post design aligned with the client's campaign goals.</p>
               </a>
             </li>
 
@@ -813,6 +920,7 @@ Design logos, brand identity kits, social media graphics, and UI/UX mockups usin
 
                 <h3 class="project-title">Social Media Design</h3>
                 <p class="project-category" data-i18n="filter_graphics">Graphics Design</p>
+                <p class="project-problem" data-i18n="pp_social3">Brief: design a professional social media graphic to strengthen the client's online presence.</p>
               </a>
             </li>
 
@@ -828,6 +936,7 @@ Design logos, brand identity kits, social media graphics, and UI/UX mockups usin
 
                 <h3 class="project-title">Book cover Mockup</h3>
                 <p class="project-category" data-i18n="filter_graphics">Graphics Design</p>
+                <p class="project-problem" data-i18n="pp_bookcover1">Brief: design an eye-catching book cover mockup that reflects the book's theme.</p>
               </a>
             </li>
 
@@ -843,6 +952,39 @@ Design logos, brand identity kits, social media graphics, and UI/UX mockups usin
 
                 <h3 class="project-title">Book cover Mockup</h3>
                 <p class="project-category" data-i18n="filter_graphics">Graphics Design</p>
+                <p class="project-problem" data-i18n="pp_bookcover2">Brief: create a professional book cover mockup suitable for print and digital publishing.</p>
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="SEO & Content Marketing">
+              <a href="https://damygastech.blogspot.com" target="_blank" rel="noopener noreferrer">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/Main Poster.png" alt="DAMYGASTECH blog homepage screenshot" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">DAMYGASTECH Blog</h3>
+                <p class="project-category" data-i18n="filter_seo">SEO & Content Marketing</p>
+                <p class="project-problem" data-i18n="pp_blog">Challenge: needed a platform to demonstrate real SEO and content marketing skills, not just claim them. Solution: built and grew a blog covering tech, security, and marketing topics — optimized for search visibility and organic reach.</p>
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="Cyber Security">
+              <a href="PASTE_MAC_SPOOFER_PROJECT_LINK_HERE" target="_blank" rel="noopener noreferrer">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/LOGO YA TAASISI.png" alt="MAC Spoofer tool interface" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">MAC Spoofer Tool</h3>
+                <p class="project-category" data-i18n="filter_cyber">Cyber Security</p>
+                <p class="project-problem" data-i18n="pp_macspoofer">Challenge: devices often need to change their network identity for privacy testing and access control audits. Solution: built a tool that spoofs a device's MAC address, useful for network security testing and privacy research.</p>
               </a>
             </li>
 
@@ -864,7 +1006,7 @@ Design logos, brand identity kits, social media graphics, and UI/UX mockups usin
 
           <h3 class="h3 form-title" data-i18n="contact_form_title">Contact Form</h3>
 
-          <form action="https://formsubmit.co/damygaso@gmail.com" method="POST" class="form" data-form>
+          <form class="form" data-form>
             <div class="input-wrapper">
               <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input data-i18n-placeholder="ph_fullname">
 
@@ -874,8 +1016,8 @@ Design logos, brand identity kits, social media graphics, and UI/UX mockups usin
             <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input data-i18n-placeholder="ph_message"></textarea>
 
             <button class="form-btn" type="submit" data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span data-i18n="send_message">Send Message</span>
+              <ion-icon name="logo-whatsapp"></ion-icon>
+              <span data-i18n="send_message">Send via WhatsApp</span>
             </button>
           </form>
         </section>
@@ -936,10 +1078,24 @@ Design logos, brand identity kits, social media graphics, and UI/UX mockups usin
 
 
   <!--
+    - floating whatsapp button
+  -->
+  <a href="https://wa.me/255743322107" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <ion-icon name="logo-whatsapp"></ion-icon>
+  </a>
+
+  <!--
     - custom js link
   -->
   <script src="./assets/js/script.js"></script>
   <script src="./assets/js/i18n.js"></script>
+  <script src="./assets/js/contact-whatsapp.js"></script>
+
+  <!--
+    - Client reviews from Google Sheet (auto-updating)
+  -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="./assets/js/google-reviews.js"></script>
 
   <!--
     - ionicon link
