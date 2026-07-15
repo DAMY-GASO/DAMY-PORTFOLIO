@@ -55,17 +55,7 @@ const translations = {
   },
 
   // Testimonials
-  testimonials_title: { en: 'Client Reviews', sw: 'Maoni ya Wateja' },
-  testimonial1_text: {
-    en: '"Damas delivered our company website fast and it now ranks well on Google. Excellent, professional work from start to finish."',
-    sw: '"Damas alitengeneza tovuti ya kampuni yetu kwa haraka na sasa inapatikana vizuri kwenye Google. Kazi bora na ya kitaalamu tangu mwanzo hadi mwisho."'
-  },
-  testimonial1_name: { en: 'Client Name', sw: 'Jina la Mteja' },
-  testimonial1_role: { en: 'Company / Role', sw: 'Kampuni / Cheo' },
-  testimonial2_text: {
-    en: '"A thorough vulnerability assessment with a clear, actionable report. Highly recommended for any business serious about security."',
-    sw: '"Tathmini kamili ya udhaifu na ripoti iliyo wazi na ya vitendo. Napendekeza sana kwa biashara yoyote inayochukulia usalama kwa uzito."'
-  },
+  
   testimonial2_name: { en: 'Client Name', sw: 'Jina la Mteja' },
   testimonial2_role: { en: 'Company / Role', sw: 'Kampuni / Cheo' },
 
@@ -77,7 +67,7 @@ const translations = {
   edu_degree: { en: 'Bachelor Degree of Science in Cybersecurity', sw: 'Shahada ya Kwanza ya Sayansi katika Usalama wa Mtandao' },
 
   certifications_title: { en: 'Certifications', sw: 'Vyeti' },
-  cert1_title: { en: 'UniAthena partnership with Cambridge International Qualifications', sw: 'UniAthena ikiwa ubia Cambridge International Qualifications' },
+  cert1_title: { en: 'UniAthena partnership with Cambridge International Qualifications', sw: 'UniAthena ikiwa ubia na Cambridge International Qualifications' },
   cert1_text: {
     en: 'Certified in Digital Marketing, covering SEO, content marketing, and social media advertising.',
     sw: 'Nina cheti cha Digital Marketing, kikijumuisha SEO, masoko ya maudhui, na matangazo ya mitandao ya kijamii.'
@@ -156,7 +146,6 @@ const translations = {
   pp_myportfolio: { en: 'Challenge: needed a single place to present multi-disciplinary skills (dev, SEO, security, design) clearly. Solution: built this responsive, bilingual portfolio with clear service breakdown.', sw: 'Changamoto: kuhitaji sehemu moja ya kuonyesha ujuzi wa fani mbalimbali (dev, SEO, usalama, design) kwa uwazi. Ufumbuzi: nilijenga portfolio hii inayojibadilisha na yenye lugha mbili.' },
   pp_encryption: { en: 'Challenge: sensitive data needed protection from unauthorized access. Solution: built an app implementing secure encryption/decryption for safe data handling.', sw: 'Changamoto: data nyeti ilihitaji ulinzi dhidi ya ufikiaji usioidhinishwa. Ufumbuzi: nilijenga app inayotekeleza usimbaji/kufungua data kwa usalama.' },
   pp_bluetooth: { en: 'Challenge: enabling communication without internet access in low-connectivity areas. Solution: developed a chat app using Bluetooth for offline peer-to-peer messaging.', sw: 'Changamoto: kuwezesha mawasiliano pasipo mtandao wa intaneti maeneo yenye mtandao hafifu. Ufumbuzi: nilitengeneza app ya chat inayotumia Bluetooth kwa ujumbe wa moja kwa moja bila intaneti.' },
-  pp_voting: { en: 'Challenge: elections needed to be transparent, fast, and tamper-resistant. Solution: built a secure digital voting system with real-time result tracking.', sw: 'Changamoto: uchaguzi ulihitaji kuwa wazi, wa haraka, na usioweza kuchezewa. Ufumbuzi: nilijenga mfumo salama wa kupiga kura wa kidijitali wenye ufuatiliaji wa matokeo papo kwa hapo.' },
   pp_tourism: { en: 'Challenge: a tourism company needed an engaging way to showcase destinations and attract bookings. Solution: designed a visually rich, fast-loading website highlighting tours and experiences.', sw: 'Changamoto: kampuni ya utalii ilihitaji njia ya kuvutia kuonyesha vivutio na kupata booking. Ufumbuzi: nilibuni tovuti yenye picha nzuri na inayopakia haraka ikionyesha safari na uzoefu.' },
   pp_attendance: { en: 'Challenge: manual attendance tracking was slow and error-prone. Solution: built a digital system that automates recording and reporting of attendance.', sw: 'Changamoto: ufuatiliaji wa mahudhurio kwa mkono ulikuwa mgumu na wenye makosa. Ufumbuzi: nilijenga mfumo wa kidijitali unaofanya kazi ya kurekodi na kutoa taarifa za mahudhurio kiotomatiki.' },
   pp_logo1: { en: 'Brief: create a memorable, professional logo for the client\'s brand identity.', sw: 'Lengo: kutengeneza logo inayokumbukwa na ya kitaalamu kwa ajili ya utambulisho wa brand ya mteja.' },
