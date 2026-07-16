@@ -87,8 +87,8 @@ const translations = {
   },
   exp3_title: { en: 'website development', sw: 'Utengenezaji wa Tovuti' },
   exp3_text: {
-    en: 'Design and build responsive, SEO-friendly websites using HTML, CSS, JavaScript, PHP, and React for individuals and businesses across various industries.',
-    sw: 'Ninabuni na kujenga tovuti zinazojibadilisha na rafiki kwa SEO kwa kutumia HTML, CSS, JavaScript, PHP, na React kwa watu binafsi na biashara katika sekta mbalimbali.'
+    en: 'Design and build responsive, SEO-friendly websites using HTML, CSS, JavaScript, and PHP (Laravel), for individuals and businesses across various industries.',
+    sw: 'Ninabuni na kujenga tovuti zinazojibadilisha na rafiki kwa SEO kwa kutumia HTML, CSS, JavaScript, na PHP, kwa watu binafsi na biashara katika sekta mbalimbali.'
   },
   exp4_title: { en: 'Mobile apps development', sw: 'Utengenezaji wa Programu za Simu' },
   exp4_text: {
@@ -146,18 +146,15 @@ const translations = {
   pp_myportfolio: { en: 'Challenge: needed a single place to present multi-disciplinary skills (dev, SEO, security, design) clearly. Solution: built this responsive, bilingual portfolio with clear service breakdown.', sw: 'Changamoto: kuhitaji sehemu moja ya kuonyesha ujuzi wa fani mbalimbali (dev, SEO, usalama, design) kwa uwazi. Ufumbuzi: nilijenga portfolio hii inayojibadilisha na yenye lugha mbili.' },
   pp_encryption: { en: 'Challenge: sensitive data needed protection from unauthorized access. Solution: built an app implementing secure encryption/decryption for safe data handling.', sw: 'Changamoto: data nyeti ilihitaji ulinzi dhidi ya ufikiaji usioidhinishwa. Ufumbuzi: nilijenga app inayotekeleza usimbaji/kufungua data kwa usalama.' },
   pp_bluetooth: { en: 'Challenge: enabling communication without internet access in low-connectivity areas. Solution: developed a chat app using Bluetooth for offline peer-to-peer messaging.', sw: 'Changamoto: kuwezesha mawasiliano pasipo mtandao wa intaneti maeneo yenye mtandao hafifu. Ufumbuzi: nilitengeneza app ya chat inayotumia Bluetooth kwa ujumbe wa moja kwa moja bila intaneti.' },
-  pp_tourism: { en: 'Challenge: a tourism company needed an engaging way to showcase destinations and attract bookings. Solution: designed a visually rich, fast-loading website highlighting tours and experiences.', sw: 'Changamoto: kampuni ya utalii ilihitaji njia ya kuvutia kuonyesha vivutio na kupata booking. Ufumbuzi: nilibuni tovuti yenye picha nzuri na inayopakia haraka ikionyesha safari na uzoefu.' },
   pp_attendance: { en: 'Challenge: manual attendance tracking was slow and error-prone. Solution: built a digital system that automates recording and reporting of attendance.', sw: 'Changamoto: ufuatiliaji wa mahudhurio kwa mkono ulikuwa mgumu na wenye makosa. Ufumbuzi: nilijenga mfumo wa kidijitali unaofanya kazi ya kurekodi na kutoa taarifa za mahudhurio kiotomatiki.' },
   pp_logo1: { en: 'Brief: create a memorable, professional logo for the client\'s brand identity.', sw: 'Lengo: kutengeneza logo inayokumbukwa na ya kitaalamu kwa ajili ya utambulisho wa brand ya mteja.' },
   pp_logo2: { en: 'Brief: design a distinctive logo reflecting the client\'s brand personality.', sw: 'Lengo: kubuni logo ya kipekee inayoakisi tabia ya brand ya mteja.' },
-  pp_logo3: { en: 'Brief: create a clean, versatile logo usable across print and digital media.', sw: 'Lengo: kutengeneza logo safi inayoweza kutumika kwenye machapisho na midia ya kidijitali.' },
-  pp_logo4: { en: 'Brief: design a modern logo representing the client\'s tech-focused brand.', sw: 'Lengo: kubuni logo ya kisasa inayowakilisha brand ya mteja inayolenga teknolojia.' },
+  pp_logo3: { en: 'Brief: create a clean, versatile logo usable across print and digital media.', sw: 'Lengo: kutengeneza logo safi inayoweza kutumika kwenye machapisho na midia ya kidijitali.
   pp_brandkit: { en: 'Brief: build a cohesive brand identity kit (colors, typography, assets) for consistent brand presentation.', sw: 'Lengo: kujenga vifurushi vya utambulisho wa brand (rangi, fonti, mali) kwa uwasilishaji thabiti wa brand.' },
   pp_social1: { en: 'Brief: design engaging social media content to boost audience engagement.', sw: 'Lengo: kubuni maudhui ya mitandao ya kijamii yanayovutia ili kuongeza ushirikiano wa hadhira.' },
   pp_social2: { en: 'Brief: create a striking social media post design aligned with the client\'s campaign goals.', sw: 'Lengo: kutengeneza muundo wa chapisho la mitandao ya kijamii linalovutia kulingana na malengo ya kampeni ya mteja.' },
   pp_social3: { en: 'Brief: design a professional social media graphic to strengthen the client\'s online presence.', sw: 'Lengo: kubuni mchoro wa kitaalamu wa mitandao ya kijamii kuimarisha uwepo wa mteja mtandaoni.' },
   pp_bookcover1: { en: 'Brief: design an eye-catching book cover mockup that reflects the book\'s theme.', sw: 'Lengo: kubuni mfano wa jalada la kitabu linalovutia linaloakisi mada ya kitabu.' },
-  pp_bookcover2: { en: 'Brief: create a professional book cover mockup suitable for print and digital publishing.', sw: 'Lengo: kutengeneza mfano wa jalada la kitabu la kitaalamu linalofaa kwa uchapishaji wa karatasi na kidijitali.' },
   pp_blog: {
     en: 'Challenge: needed a platform to demonstrate real SEO and content marketing skills, not just claim them. Solution: built and grew a blog covering tech, security, and marketing topics — optimized for search visibility and organic reach.',
     sw: 'Changamoto: kuhitaji jukwaa la kuonyesha ujuzi halisi wa SEO na masoko ya maudhui, si kudai tu. Ufumbuzi: nilijenga na kukuza blog inayohusu teknolojia, usalama, na masoko — iliyoboreshwa kwa mwonekano kwenye injini za utafutaji.'
