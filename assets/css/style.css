@@ -1217,6 +1217,7 @@ body {
     padding: 4px;
     gap: 2px;
   }
+}
   @media (max-width: 768px) {
   .lang-toggle {
     z-index: 9999 !important; /* Inahakikisha iko juu ya sidebar */
