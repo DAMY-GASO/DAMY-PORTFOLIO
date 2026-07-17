@@ -61,13 +61,13 @@ function applyLanguage(lang) {
   });
 
   // 3. HAPA NDIPO UNAPOWEKA HIYO LOGIC YA FILTER (Dropdown)
-  const selectValueEl = document.querySelector('[data-select-value]');
-  // Tunahakikisha inasoma tafsiri sahihi ya kile kilichochaguliwa sasa hivi
-  const activeFilterBtn = document.querySelector('[data-filter-btn].active');
-  
-  if (selectValueEl) {
+// Badala ya const selectValueEl = document.querySelector('[data-select-value]');
+// Tumia hii:
+const selectValueElements = document.querySelectorAll('[data-select-value]');
+
+if (selectValueElements.length > 0) {
+  selectValueElements.forEach(selectValueEl => {
     if (activeFilterBtn) {
-      // Kama kuna filter iliyochaguliwa, ionyeshe kwa lugha husika
       const filterKey = activeFilterBtn.getAttribute('data-i18n');
       if (filterKey && translations[filterKey]) {
         selectValueEl.textContent = translations[filterKey][lang];
@@ -75,17 +75,11 @@ function applyLanguage(lang) {
         selectValueEl.textContent = activeFilterBtn.textContent;
       }
     } else {
-      // Kama hakuna iliyochaguliwa, rudisha kwenye default
       selectValueEl.textContent = translations['select_default'][lang];
     }
-  }
-
-  // 4. Update toggle button active states
-  document.querySelectorAll('[data-lang-toggle] .lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.lang === lang);
   });
 }
-
+  
 
 // custom select variables (portfolio filter)
 const select = document.querySelector("[data-select]");
