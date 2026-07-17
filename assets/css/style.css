@@ -1217,6 +1217,14 @@ body {
     padding: 4px;
     gap: 2px;
   }
+  @media (max-width: 768px) {
+  .lang-toggle {
+    z-index: 9999 !important; /* Inahakikisha iko juu ya sidebar */
+    position: fixed; /* Badala ya absolute, tumia fixed ili isisogee */
+    top: 10px;
+    right: 10px;
+  }
+}
 
   .lang-btn {
     padding: 4px 8px;
