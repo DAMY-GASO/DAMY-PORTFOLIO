@@ -26,6 +26,60 @@ if (sidebarBtn && sidebar) {
   });
 }
 
+// ... (code nyingine za juu za main.js) ...
+
+function applyLanguage(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+
+  // 1. Kutafsiri maandishi ya kawaida
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    const entry = translations[key];
+    if (!entry) return;
+    const value = entry[lang] || entry.en;
+    if (value.indexOf('<br>') !== -1) {
+      el.innerHTML = value;
+    } else {
+      el.textContent = value;
+    }
+  });
+
+  // 2. Kutafsiri placeholders
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    const entry = translations[key];
+    if (!entry) return;
+    el.setAttribute('placeholder', entry[lang] || entry.en);
+  });
+
+  // 3. HAPA NDIPO UNAPOWEKA HIYO LOGIC YA FILTER (Dropdown)
+  const selectValueEl = document.querySelector('[data-select-value]');
+  // Tunahakikisha inasoma tafsiri sahihi ya kile kilichochaguliwa sasa hivi
+  const activeFilterBtn = document.querySelector('[data-filter-btn].active');
+  
+  if (selectValueEl) {
+    if (activeFilterBtn) {
+      // Kama kuna filter iliyochaguliwa, ionyeshe kwa lugha husika
+      const filterKey = activeFilterBtn.getAttribute('data-i18n');
+      if (filterKey && translations[filterKey]) {
+        selectValueEl.textContent = translations[filterKey][lang];
+      } else {
+        selectValueEl.textContent = activeFilterBtn.textContent;
+      }
+    } else {
+      // Kama hakuna iliyochaguliwa, rudisha kwenye default
+      selectValueEl.textContent = translations['select_default'][lang];
+    }
+  }
+
+  // 4. Update toggle button active states
+  document.querySelectorAll('[data-lang-toggle] .lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+}
+
+
 // custom select variables (portfolio filter)
 const select = document.querySelector("[data-select]");
 const selectItems = document.querySelectorAll("[data-select-item]");
