@@ -25,7 +25,14 @@ if (sidebarBtn && sidebar) {
     });
   });
 }
-
+document.querySelectorAll('[data-lang-toggle] .lang-btn').forEach(btn => {
+  btn.addEventListener('click', function () {
+    console.log("Language button clicked: " + this.dataset.lang); // Hii itakuambia kama simu inasoma click
+    if (this.dataset.lang !== currentLang) {
+      applyLanguage(this.dataset.lang);
+    }
+  });
+});
 // ... (code nyingine za juu za main.js) ...
 
 function applyLanguage(lang) {
