@@ -1208,8 +1208,8 @@ body {
 @media (min-width: 1024px) {
   .lang-toggle {
     position: absolute;
-    top: 20px; /* Sogeza chini kidogo ili isigongane na ukingo */
-    right: 20px; /* Iweke upande wa kulia wa sidebar */
+    top: 20px;
+    right: 20px;
     left: auto;
     background: var(--eerie-black-1);
     border: 1px solid var(--jet);
@@ -1217,18 +1217,18 @@ body {
     padding: 4px;
     gap: 2px;
   }
-}
-  @media (max-width: 768px) {
-  .lang-toggle {
-    z-index: 9999 !important; /* Inahakikisha iko juu ya sidebar */
-    position: fixed; /* Badala ya absolute, tumia fixed ili isisogee */
-    top: 10px;
-    right: 10px;
-  }
-}
-
   .lang-btn {
     padding: 4px 8px;
     font-size: 10px;
+  }
+}
+
+/* Hii sasa ni query huru, si nested */
+@media (max-width: 768px) {
+  .lang-toggle {
+    z-index: 9999 !important;
+    position: fixed;
+    top: 10px;
+    right: 10px;
   }
 }
