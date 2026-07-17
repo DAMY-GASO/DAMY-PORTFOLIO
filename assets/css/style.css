@@ -1228,7 +1228,8 @@ body {
   .lang-toggle {
     position: fixed;
     top: 10px;
-    right: 10px;
-    z-index: 30; /* badala ya 9999 - haihitaji kuwa juu ya kila kitu */
+    left: 10px;      /* badala ya right */
+    right: auto;
+    z-index: 30;
   }
 }
