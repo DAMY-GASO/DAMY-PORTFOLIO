@@ -33,13 +33,11 @@ document.querySelectorAll('[data-lang-toggle] .lang-btn').forEach(btn => {
     }
   });
 });
-// ... (code nyingine za juu za main.js) ...
 
 function applyLanguage(lang) {
   currentLang = lang;
   document.documentElement.lang = lang;
 
-  // 1. Kutafsiri maandishi ya kawaida
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     const entry = translations[key];
@@ -52,7 +50,6 @@ function applyLanguage(lang) {
     }
   });
 
-  // 2. Kutafsiri placeholders
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
     const key = el.getAttribute('data-i18n-placeholder');
     const entry = translations[key];
@@ -60,10 +57,9 @@ function applyLanguage(lang) {
     el.setAttribute('placeholder', entry[lang] || entry.en);
   });
 
-// 3. HAPA NDIPO UNAPOWEKA HIYO LOGIC YA FILTER (Dropdown)
   const selectValueElements = document.querySelectorAll('[data-select-value]');
   const activeFilterBtn = document.querySelector('[data-filter-btn].active');
-  
+
   selectValueElements.forEach(selectValueEl => {
     if (activeFilterBtn) {
       const filterKey = activeFilterBtn.getAttribute('data-i18n');
@@ -76,7 +72,7 @@ function applyLanguage(lang) {
       selectValueEl.textContent = translations['select_default'][lang];
     }
   });
-
+} 
 // custom select variables (portfolio filter)
 const select = document.querySelector("[data-select]");
 const selectItems = document.querySelectorAll("[data-select-item]");
