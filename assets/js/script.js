@@ -60,12 +60,10 @@ function applyLanguage(lang) {
     el.setAttribute('placeholder', entry[lang] || entry.en);
   });
 
-  // 3. HAPA NDIPO UNAPOWEKA HIYO LOGIC YA FILTER (Dropdown)
-// Badala ya const selectValueEl = document.querySelector('[data-select-value]');
-// Tumia hii:
-const selectValueElements = document.querySelectorAll('[data-select-value]');
-
-if (selectValueElements.length > 0) {
+// 3. HAPA NDIPO UNAPOWEKA HIYO LOGIC YA FILTER (Dropdown)
+  const selectValueElements = document.querySelectorAll('[data-select-value]');
+  const activeFilterBtn = document.querySelector('[data-filter-btn].active');
+  
   selectValueElements.forEach(selectValueEl => {
     if (activeFilterBtn) {
       const filterKey = activeFilterBtn.getAttribute('data-i18n');
@@ -78,8 +76,6 @@ if (selectValueElements.length > 0) {
       selectValueEl.textContent = translations['select_default'][lang];
     }
   });
-}
-  
 
 // custom select variables (portfolio filter)
 const select = document.querySelector("[data-select]");
