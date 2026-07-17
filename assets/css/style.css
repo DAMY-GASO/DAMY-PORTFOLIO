@@ -1205,3 +1205,21 @@ body {
   .lightbox-prev { left: 8px; width: 38px; height: 38px; font-size: 18px; }
   .lightbox-next { right: 8px; width: 38px; height: 38px; font-size: 18px; }
 }
+@media (min-width: 1024px) {
+  .lang-toggle {
+    position: absolute;
+    top: 20px; /* Sogeza chini kidogo ili isigongane na ukingo */
+    right: 20px; /* Iweke upande wa kulia wa sidebar */
+    left: auto;
+    background: var(--eerie-black-1);
+    border: 1px solid var(--jet);
+    border-radius: 12px;
+    padding: 4px;
+    gap: 2px;
+  }
+
+  .lang-btn {
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+}
