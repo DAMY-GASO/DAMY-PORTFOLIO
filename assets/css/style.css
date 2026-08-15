@@ -1168,6 +1168,30 @@ body {
   margin-top: 4px;
 }
 
+.lightbox-drive-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 10px 20px;
+  background: var(--border-gradient-onyx);
+  color: var(--sky);
+  font-size: var(--fs-7, 14px);
+  font-weight: var(--fw-500);
+  border-radius: 12px;
+  border: 1px solid var(--jet);
+  transition: var(--transition-1);
+}
+.lightbox-drive-link:hover {
+  background: var(--sky);
+  color: var(--black);
+  border-color: var(--sky);
+}
+.lightbox-drive-link ion-icon {
+  font-size: 18px;
+  display: block;
+}
+
 .lightbox-close,
 .lightbox-nav {
   position: absolute;
