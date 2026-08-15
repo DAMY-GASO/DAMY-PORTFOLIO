@@ -163,6 +163,9 @@ const translations = {
     en: "Challenge: devices often need to change their network identity for privacy testing and access control audits. Solution: built a tool that spoofs a device's MAC address, useful for network security testing and privacy research.",
     sw: 'Changamoto: vifaa mara nyingi vinahitaji kubadili utambulisho wake wa mtandao kwa ajili ya majaribio ya faragha na ukaguzi wa udhibiti wa ufikiaji. Ufumbuzi: nilijenga tool inayobadilisha MAC address ya kifaa, inayosaidia katika majaribio ya usalama wa mtandao na utafiti wa faragha.'
   },
+
+  // Lightbox
+  drive_link_text: { en: 'View All Designs on Drive', sw: 'Angalia Designs Zote kwenye Drive' },
 };
 
 // -----------------------------------------------------------------
