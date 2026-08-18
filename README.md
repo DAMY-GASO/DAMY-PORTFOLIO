@@ -1,5 +1,5 @@
 
-# 👋 Hi, I'm Damas Gambo
+# Hi, I'm Damas Gambo
 
 ### Cybersecurity Consultant | SEO & Content Marketing Specialist | Web Developer & Graphic Designer
 
