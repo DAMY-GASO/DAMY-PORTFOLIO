@@ -159,6 +159,10 @@ const translations = {
     en: 'Challenge: Needed a platform to demonstrate real SEO and content marketing skills, not just claim them. Solution: I built and grew a blog covering tech, security, and marketing topics — optimized for search visibility and organic reach.',
     sw: 'Changamoto: Kuhitaji jukwaa la kuonyesha ujuzi halisi wa SEO na masoko ya maudhui, si kudai tu. Ufumbuzi: Nilijenga na kukuza blog inayohusu teknolojia, usalama, na masoko — iliyoboreshwa kwa mwonekano kwenye injini za utafutaji.'
   },
+  pp_blog1: {
+    en: 'Challenge: Needed a platform to demonstrate our nation pride. Solution: I built and grew a blog covering our pride, culture, and language.',
+    sw: 'Changamoto: Kuhitaji jukwaa la kuonyesha fahari yetu ya Tanzania. Ufumbuzi: Nilijenga na kukuza blog inayohusu fahari yetu, utamaduni, na lugha.'
+  },
   pp_macspoofer: {
     en: "Challenge: devices often need to change their network identity for privacy testing and access control audits. Solution: built a tool that spoofs a device's MAC address, useful for network security testing and privacy research.",
     sw: 'Changamoto: vifaa mara nyingi vinahitaji kubadili utambulisho wake wa mtandao kwa ajili ya majaribio ya faragha na ukaguzi wa udhibiti wa ufikiaji. Ufumbuzi: nilijenga tool inayobadilisha MAC address ya kifaa, inayosaidia katika majaribio ya usalama wa mtandao na utafiti wa faragha.'
