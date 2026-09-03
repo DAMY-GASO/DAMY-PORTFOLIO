@@ -320,3 +320,63 @@ function safeQuerySelector(selector, fallback = null) {
     if (e.key === 'ArrowRight') showImage(currentIndex + 1);
   });
 })();
+
+
+// Card reveal on scroll - Intersection Observer
+document.addEventListener('DOMContentLoaded', function() {
+  const projectItems = document.querySelectorAll('.project-item');
+  
+  if (projectItems.length === 0) return;
+  
+  // Create observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        // Optionally unobserve after reveal to improve performance
+        // observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -20px 0px'
+  });
+  
+  // Observe each project item
+  projectItems.forEach(item => {
+    observer.observe(item);
+  });
+  
+  // Also handle filter changes - re-trigger animations
+  const filterButtons = document.querySelectorAll('[data-filter-btn], [data-select-item]');
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      // Small delay to let DOM update, then re-observe
+      setTimeout(() => {
+        const visibleItems = document.querySelectorAll('.project-item.active');
+        visibleItems.forEach((item, index) => {
+          item.classList.remove('visible');
+          setTimeout(() => {
+            // Re-check if still visible
+            const rect = item.getBoundingClientRect();
+            const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+            if (isVisible) {
+              item.classList.add('visible');
+            }
+          }, 50 + (index * 80));
+        });
+      }, 150);
+    });
+  });
+});
+
+// Tazama pia wakati wa scroll - kwa ajili ya cards zilizobaki
+window.addEventListener('scroll', function() {
+  const items = document.querySelectorAll('.project-item:not(.visible)');
+  items.forEach(item => {
+    const rect = item.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 50) {
+      item.classList.add('visible');
+    }
+  });
+}, { passive: true });
