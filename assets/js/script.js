@@ -322,48 +322,65 @@ function safeQuerySelector(selector, fallback = null) {
 })();
 
 
-// ================================================================
-// CARD REVEAL ON SCROLL - Intersection Observer (ILIYOSAHIHISHWA)
+ // ================================================================
+// CARD REVEAL ON SCROLL - SEHEMU ZOTE (ILIYOSASISHWA)
 // ================================================================
 document.addEventListener('DOMContentLoaded', function() {
-  const projectItems = document.querySelectorAll('.project-item');
   
-  if (projectItems.length === 0) return;
+  // Elements zote zinazohitaji reveal
+  const revealElements = [
+    ...document.querySelectorAll('.service-item'),
+    ...document.querySelectorAll('.testimonial-item'),
+    ...document.querySelectorAll('.timeline-item'),
+    ...document.querySelectorAll('.skills-item'),
+    ...document.querySelectorAll('.project-item'),
+    ...document.querySelectorAll('.about-text'),
+    ...document.querySelectorAll('.article-title'),
+    ...document.querySelectorAll('.service-title'),
+    ...document.querySelectorAll('.clients-title'),
+    ...document.querySelectorAll('.form-title'),
+    ...document.querySelectorAll('.skills-title'),
+    ...document.querySelectorAll('.timeline .title-wrapper'),
+    ...document.querySelectorAll('.cv-download'),
+    ...document.querySelectorAll('.contact-form'),
+    ...document.querySelectorAll('.social-links'),
+    ...document.querySelectorAll('.leave-review-btn')
+  ];
+  
+  if (revealElements.length === 0) return;
   
   // Create observer
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        // Optionally unobserve after reveal to improve performance
-        // observer.unobserve(entry.target);
+        entry.target.classList.add('reveal-visible');
+        // Unobserve baada ya kuonekana ili kuokoa resources
+        observer.unobserve(entry.target);
       }
     });
   }, {
-    threshold: 0.15,
-    rootMargin: '0px 0px -20px 0px'
+    threshold: 0.10,
+    rootMargin: '0px 0px -30px 0px'
   });
   
-  // Observe each project item
-  projectItems.forEach(item => {
+  // Observe each element
+  revealElements.forEach(item => {
     observer.observe(item);
   });
   
-  // Also handle filter changes - re-trigger animations
+  // Kwa project items - handle filter changes
   const filterButtons = document.querySelectorAll('[data-filter-btn], [data-select-item]');
   filterButtons.forEach(btn => {
     btn.addEventListener('click', function() {
-      // Small delay to let DOM update, then re-observe
       setTimeout(() => {
         const visibleItems = document.querySelectorAll('.project-item.active');
         visibleItems.forEach((item, index) => {
-          item.classList.remove('visible');
+          item.classList.remove('reveal-visible');
           setTimeout(() => {
-            // Re-check if still visible
             const rect = item.getBoundingClientRect();
             const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
             if (isVisible) {
-              item.classList.add('visible');
+              item.classList.add('reveal-visible');
             }
           }, 50 + (index * 80));
         });
@@ -372,13 +389,31 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Tazama pia wakati wa scroll - kwa ajili ya cards zilizobaki
+// Scroll event - kwa ajili ya elements zilizobaki
 window.addEventListener('scroll', function() {
-  const items = document.querySelectorAll('.project-item:not(.visible)');
+  const items = document.querySelectorAll(
+    '.service-item:not(.reveal-visible), ' +
+    '.testimonial-item:not(.reveal-visible), ' +
+    '.timeline-item:not(.reveal-visible), ' +
+    '.skills-item:not(.reveal-visible), ' +
+    '.project-item:not(.reveal-visible), ' +
+    '.about-text:not(.reveal-visible), ' +
+    '.article-title:not(.reveal-visible), ' +
+    '.service-title:not(.reveal-visible), ' +
+    '.clients-title:not(.reveal-visible), ' +
+    '.form-title:not(.reveal-visible), ' +
+    '.skills-title:not(.reveal-visible), ' +
+    '.timeline .title-wrapper:not(.reveal-visible), ' +
+    '.cv-download:not(.reveal-visible), ' +
+    '.contact-form:not(.reveal-visible), ' +
+    '.social-links:not(.reveal-visible), ' +
+    '.leave-review-btn:not(.reveal-visible)'
+  );
+  
   items.forEach(item => {
     const rect = item.getBoundingClientRect();
     if (rect.top < window.innerHeight - 50) {
-      item.classList.add('visible');
+      item.classList.add('reveal-visible');
     }
   });
 }, { passive: true });
