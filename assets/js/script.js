@@ -322,7 +322,9 @@ function safeQuerySelector(selector, fallback = null) {
 })();
 
 
-// Card reveal on scroll - Intersection Observer
+// ================================================================
+// CARD REVEAL ON SCROLL - Intersection Observer (ILIYOSAHIHISHWA)
+// ================================================================
 document.addEventListener('DOMContentLoaded', function() {
   const projectItems = document.querySelectorAll('.project-item');
   
