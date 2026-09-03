@@ -1371,3 +1371,191 @@ body {
     z-index: 30;
   }
 }
+
+
+/*-----------------------------------*\
+  #CARD REVEAL ANIMATIONS - SEHEMU ZOTE
+\*-----------------------------------*/
+
+/* Service items */
+.service-item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform, opacity;
+}
+
+.service-item.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays kwa service items */
+.service-item:nth-child(1) { transition-delay: 0.05s; }
+.service-item:nth-child(2) { transition-delay: 0.12s; }
+.service-item:nth-child(3) { transition-delay: 0.19s; }
+.service-item:nth-child(4) { transition-delay: 0.26s; }
+
+/* Testimonials */
+.testimonial-item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform, opacity;
+}
+
+.testimonial-item.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.testimonial-item:nth-child(1) { transition-delay: 0.05s; }
+.testimonial-item:nth-child(2) { transition-delay: 0.15s; }
+.testimonial-item:nth-child(3) { transition-delay: 0.25s; }
+.testimonial-item:nth-child(4) { transition-delay: 0.35s; }
+.testimonial-item:nth-child(5) { transition-delay: 0.45s; }
+
+/* Timeline items (Resume) */
+.timeline-item {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform, opacity;
+}
+
+.timeline-item.reveal-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.timeline-item:nth-child(1) { transition-delay: 0.05s; }
+.timeline-item:nth-child(2) { transition-delay: 0.12s; }
+.timeline-item:nth-child(3) { transition-delay: 0.19s; }
+.timeline-item:nth-child(4) { transition-delay: 0.26s; }
+.timeline-item:nth-child(5) { transition-delay: 0.33s; }
+.timeline-item:nth-child(6) { transition-delay: 0.40s; }
+
+/* Skills items */
+.skills-item {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform, opacity;
+}
+
+.skills-item.reveal-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.skills-item:nth-child(1) { transition-delay: 0.03s; }
+.skills-item:nth-child(2) { transition-delay: 0.07s; }
+.skills-item:nth-child(3) { transition-delay: 0.11s; }
+.skills-item:nth-child(4) { transition-delay: 0.15s; }
+.skills-item:nth-child(5) { transition-delay: 0.19s; }
+.skills-item:nth-child(6) { transition-delay: 0.23s; }
+.skills-item:nth-child(7) { transition-delay: 0.27s; }
+.skills-item:nth-child(8) { transition-delay: 0.31s; }
+.skills-item:nth-child(9) { transition-delay: 0.35s; }
+.skills-item:nth-child(10) { transition-delay: 0.39s; }
+.skills-item:nth-child(11) { transition-delay: 0.43s; }
+.skills-item:nth-child(12) { transition-delay: 0.47s; }
+
+/* About text */
+.about-text {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease,
+              transform 0.8s ease;
+  will-change: transform, opacity;
+}
+
+.about-text.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Article title */
+.article-title {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease,
+              transform 0.6s ease;
+  will-change: transform, opacity;
+}
+
+.article-title.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Section titles */
+.service-title,
+.clients-title,
+.form-title,
+.skills-title,
+.timeline .title-wrapper,
+.cv-download {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease,
+              transform 0.6s ease;
+  will-change: transform, opacity;
+}
+
+.service-title.reveal-visible,
+.clients-title.reveal-visible,
+.form-title.reveal-visible,
+.skills-title.reveal-visible,
+.timeline .title-wrapper.reveal-visible,
+.cv-download.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Contact form */
+.contact-form {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease,
+              transform 0.8s ease;
+  will-change: transform, opacity;
+}
+
+.contact-form.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.social-links {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease,
+              transform 0.8s ease;
+  will-change: transform, opacity;
+  transition-delay: 0.2s;
+}
+
+.social-links.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Leave review button */
+.leave-review-btn {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease,
+              transform 0.6s ease;
+  will-change: transform, opacity;
+  transition-delay: 0.3s;
+}
+
+.leave-review-btn.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
