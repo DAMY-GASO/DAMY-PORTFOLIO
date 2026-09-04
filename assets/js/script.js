@@ -15,7 +15,6 @@ if (sidebarBtn && sidebar) {
     elementToggleFunc(sidebar); 
   });
 
-  // Close sidebar when clicking on a nav link (mobile)
   const navLinks = document.querySelectorAll("[data-nav-link]");
   navLinks.forEach(link => {
     link.addEventListener("click", function() {
@@ -25,9 +24,10 @@ if (sidebarBtn && sidebar) {
     });
   });
 }
+
+// Language toggle
 document.querySelectorAll('[data-lang-toggle] .lang-btn').forEach(btn => {
   btn.addEventListener('click', function () {
-    console.log("Language button clicked: " + this.dataset.lang); // Hii itakuambia kama simu inasoma click
     if (this.dataset.lang !== currentLang) {
       applyLanguage(this.dataset.lang);
     }
@@ -72,17 +72,15 @@ function applyLanguage(lang) {
       selectValueEl.textContent = translations['select_default'][lang];
     }
   });
-} 
-// custom select variables (portfolio filter)
+}
+
+// Portfolio filter
 const select = document.querySelector("[data-select]");
 const selectItems = document.querySelectorAll("[data-select-item]");
 const selectValue = document.querySelector("[data-select-value]");
 const filterBtn = document.querySelectorAll("[data-filter-btn]");
-
-// filter variables
 const filterItems = document.querySelectorAll("[data-filter-item]");
 
-// Filter function – case‑insensitive and trim
 const filterFunc = function (selectedValue) {
   const lowerSelected = selectedValue.trim().toLowerCase();
   for (let i = 0; i < filterItems.length; i++) {
@@ -102,14 +100,12 @@ if (select && selectValue) {
     elementToggleFunc(this); 
   });
 
-  // Close select when clicking outside
   document.addEventListener("click", function (e) {
     if (select && !select.contains(e.target)) {
       select.classList.remove("active");
     }
   });
 
-  // add event to all select items
   for (let i = 0; i < selectItems.length; i++) {
     selectItems[i].addEventListener("click", function () {
       let selectedValue = this.dataset.filterValue || this.innerText.trim();
@@ -120,7 +116,6 @@ if (select && selectValue) {
   }
 }
 
-// add event to all filter button items for large screen
 if (filterBtn.length && selectValue) {
   let lastClickedBtn = filterBtn[0];
   for (let i = 0; i < filterBtn.length; i++) {
@@ -136,12 +131,11 @@ if (filterBtn.length && selectValue) {
   }
 }
 
-// contact form variables
+// Contact form
 const form = document.querySelector("[data-form]");
 const formInputs = document.querySelectorAll("[data-form-input]");
 const formBtn = document.querySelector("[data-form-btn]");
 
-// Form validation function (enables/disables submit button)
 const validateForm = function () {
   if (!formBtn) return;
   let isValid = true;
@@ -159,29 +153,23 @@ const validateForm = function () {
   }
 }
 
-// add event to all form input fields
 for (let i = 0; i < formInputs.length; i++) {
   formInputs[i].addEventListener("input", validateForm);
   formInputs[i].addEventListener("blur", validateForm);
 }
-
-// initial validation on page load
 validateForm();
 
-// page navigation variables
+// Page navigation
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
 
-// add event to all nav links
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
-    // Remove active class from all pages and links
     for (let j = 0; j < pages.length; j++) {
       pages[j].classList.remove("active");
       navigationLinks[j].classList.remove("active");
     }
     
-    // Add active class to current page and link
     const targetPage = this.dataset.target || this.innerHTML.toLowerCase();
     for (let j = 0; j < pages.length; j++) {
       if (targetPage === pages[j].dataset.page) {
@@ -194,60 +182,14 @@ for (let i = 0; i < navigationLinks.length; i++) {
   });
 }
 
-// Smooth scrolling for any anchor links (if added later)
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  });
-});
-
-// Responsive navigation – hide sidebar on resize to desktop
+// Responsive
 window.addEventListener('resize', function() {
   if (sidebar && window.innerWidth > 768 && sidebar.classList.contains('active')) {
     sidebar.classList.remove('active');
   }
 });
 
-// Optional: lazy loading for images (only if you add data-src attributes)
-if ('IntersectionObserver' in window) {
-  const lazyImages = document.querySelectorAll('img[data-src]');
-  if (lazyImages.length) {
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const img = entry.target;
-          img.src = img.dataset.src;
-          img.classList.remove('lazy');
-          imageObserver.unobserve(img);
-        }
-      });
-    });
-    lazyImages.forEach(img => imageObserver.observe(img));
-  }
-}
-
-// Utility to safely query selector (avoids console errors)
-function safeQuerySelector(selector, fallback = null) {
-  try {
-    return document.querySelector(selector) || fallback;
-  } catch (error) {
-    console.warn(`Element not found: ${selector}`);
-    return fallback;
-  }
-}
-
-// -----------------------------------------------------------------
-// Graphics Design gallery lightbox
-// Clicking any "Graphics Design" project opens a full gallery viewer
-// with all graphics work, browsable with prev/next.
-// -----------------------------------------------------------------
+// Lightbox
 (function () {
   const lightbox = document.querySelector('[data-lightbox]');
   if (!lightbox) return;
@@ -322,21 +264,14 @@ function safeQuerySelector(selector, fallback = null) {
 })();
 
 
- // ================================================================
-// CARD REVEAL - Toleo Rahisi
+// ================================================================
+// CARD REVEAL - Project Items
 // ================================================================
 
 document.addEventListener('DOMContentLoaded', function() {
   
-  // Kwa project items - ongeza class 'reveal-ready' kwa zote active
-  const activeProjects = document.querySelectorAll('.project-item.active');
-  activeProjects.forEach(item => {
-    item.classList.add('reveal-ready');
-  });
-  
-  // Function ya ku-reveal
   function revealProjects() {
-    const projects = document.querySelectorAll('.project-item.active.reveal-ready:not(.visible)');
+    const projects = document.querySelectorAll('.project-item.active:not(.visible)');
     projects.forEach((item, index) => {
       setTimeout(() => {
         const rect = item.getBoundingClientRect();
@@ -347,34 +282,92 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // Reveal baada ya 500ms
   setTimeout(revealProjects, 500);
   
-  // Kwa filter changes
   const filterButtons = document.querySelectorAll('[data-filter-btn], [data-select-item]');
   filterButtons.forEach(btn => {
     btn.addEventListener('click', function() {
-      setTimeout(() => {
-        // Ongeza reveal-ready kwa projects mpya zilizo active
-        const newActive = document.querySelectorAll('.project-item.active:not(.reveal-ready)');
-        newActive.forEach(item => {
-          item.classList.add('reveal-ready');
-        });
-        revealProjects();
-      }, 300);
+      setTimeout(revealProjects, 300);
     });
   });
 });
 
-// Scroll event
 window.addEventListener('scroll', function() {
-  const projects = document.querySelectorAll('.project-item.active.reveal-ready:not(.visible)');
-  projects.forEach((item, index) => {
+  const projects = document.querySelectorAll('.project-item.active:not(.visible)');
+  projects.forEach((item) => {
     const rect = item.getBoundingClientRect();
     if (rect.top < window.innerHeight - 50) {
       item.classList.add('visible');
     }
   });
 }, { passive: true });
+
+
+// ================================================================
+// CARD REVEAL - Sehemu Nyingine (Service, Testimonials, nk)
+// ================================================================
+
+document.addEventListener('DOMContentLoaded', function() {
   
-          
+  const revealElements = [
+    ...document.querySelectorAll('.service-item'),
+    ...document.querySelectorAll('.testimonial-item'),
+    ...document.querySelectorAll('.timeline-item'),
+    ...document.querySelectorAll('.skills-item'),
+    ...document.querySelectorAll('.about-text'),
+    ...document.querySelectorAll('.article-title'),
+    ...document.querySelectorAll('.service-title'),
+    ...document.querySelectorAll('.clients-title'),
+    ...document.querySelectorAll('.form-title'),
+    ...document.querySelectorAll('.skills-title'),
+    ...document.querySelectorAll('.timeline .title-wrapper'),
+    ...document.querySelectorAll('.cv-download'),
+    ...document.querySelectorAll('.contact-form'),
+    ...document.querySelectorAll('.social-links'),
+    ...document.querySelectorAll('.leave-review-btn')
+  ];
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.10,
+    rootMargin: '0px 0px -30px 0px'
+  });
+  
+  revealElements.forEach(item => {
+    observer.observe(item);
+  });
+  
+  window.addEventListener('scroll', function() {
+    const items = document.querySelectorAll(
+      '.service-item:not(.reveal-visible), ' +
+      '.testimonial-item:not(.reveal-visible), ' +
+      '.timeline-item:not(.reveal-visible), ' +
+      '.skills-item:not(.reveal-visible), ' +
+      '.about-text:not(.reveal-visible), ' +
+      '.article-title:not(.reveal-visible), ' +
+      '.service-title:not(.reveal-visible), ' +
+      '.clients-title:not(.reveal-visible), ' +
+      '.form-title:not(.reveal-visible), ' +
+      '.skills-title:not(.reveal-visible), ' +
+      '.timeline .title-wrapper:not(.reveal-visible), ' +
+      '.cv-download:not(.reveal-visible), ' +
+      '.contact-form:not(.reveal-visible), ' +
+      '.social-links:not(.reveal-visible), ' +
+      '.leave-review-btn:not(.reveal-visible)'
+    );
+    
+    items.forEach(item => {
+      const rect = item.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 50) {
+        item.classList.add('reveal-visible');
+      }
+    });
+  }, { passive: true });
+  
+});
