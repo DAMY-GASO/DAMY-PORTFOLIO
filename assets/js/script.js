@@ -322,18 +322,18 @@ function safeQuerySelector(selector, fallback = null) {
 })();
 
 
- // ================================================================
-// CARD REVEAL ON SCROLL - SEHEMU ZOTE (ILIYOSASISHWA)
+ 
+      // ================================================================
+// CARD REVEAL ON SCROLL - SEHEMU ZOTE (Toleo Kamili)
 // ================================================================
 document.addEventListener('DOMContentLoaded', function() {
   
-  // Elements zote zinazohitaji reveal
+  // Elements zote zinazohitaji reveal (isipokuwa project items)
   const revealElements = [
     ...document.querySelectorAll('.service-item'),
     ...document.querySelectorAll('.testimonial-item'),
     ...document.querySelectorAll('.timeline-item'),
     ...document.querySelectorAll('.skills-item'),
-    ...document.querySelectorAll('.project-item'),
     ...document.querySelectorAll('.about-text'),
     ...document.querySelectorAll('.article-title'),
     ...document.querySelectorAll('.service-title'),
@@ -347,14 +347,11 @@ document.addEventListener('DOMContentLoaded', function() {
     ...document.querySelectorAll('.leave-review-btn')
   ];
   
-  if (revealElements.length === 0) return;
-  
-  // Create observer
+  // Observer kwa elements zote (isipokuwa project items)
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('reveal-visible');
-        // Unobserve baada ya kuonekana ili kuokoa resources
         observer.unobserve(entry.target);
       }
     });
@@ -363,12 +360,30 @@ document.addEventListener('DOMContentLoaded', function() {
     rootMargin: '0px 0px -30px 0px'
   });
   
-  // Observe each element
   revealElements.forEach(item => {
     observer.observe(item);
   });
   
-  // Kwa project items - handle filter changes
+  // ============================================================
+  // PROJECT ITEMS - Special handling
+  // ============================================================
+  
+  // Function ya kuangalia na kuongeza reveal-visible kwa projects
+  function checkAndRevealProjects() {
+    const activeProjects = document.querySelectorAll('.project-item.active');
+    activeProjects.forEach((item, index) => {
+      // Hakikisha item ina transition delay sahihi
+      const rect = item.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        item.classList.add('reveal-visible');
+      }
+    });
+  }
+  
+  // Angalia mara ya kwanza baada ya page load
+  setTimeout(checkAndRevealProjects, 600);
+  
+  // Kwa filter changes
   const filterButtons = document.querySelectorAll('[data-filter-btn], [data-select-item]');
   filterButtons.forEach(btn => {
     btn.addEventListener('click', function() {
@@ -378,25 +393,43 @@ document.addEventListener('DOMContentLoaded', function() {
           item.classList.remove('reveal-visible');
           setTimeout(() => {
             const rect = item.getBoundingClientRect();
-            const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-            if (isVisible) {
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
               item.classList.add('reveal-visible');
             }
           }, 50 + (index * 80));
         });
-      }, 150);
+      }, 200);
+    });
+  });
+  
+  // Kwa navigation between pages
+  const navLinks = document.querySelectorAll('[data-nav-link]');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      setTimeout(() => {
+        const visibleItems = document.querySelectorAll('.project-item.active');
+        visibleItems.forEach((item, index) => {
+          item.classList.remove('reveal-visible');
+          setTimeout(() => {
+            const rect = item.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+              item.classList.add('reveal-visible');
+            }
+          }, 100 + (index * 80));
+        });
+      }, 400);
     });
   });
 });
 
-// Scroll event - kwa ajili ya elements zilizobaki
+// Scroll event - kwa ajili ya elements zote
 window.addEventListener('scroll', function() {
+  // Kwa elements zote isipokuwa project items
   const items = document.querySelectorAll(
     '.service-item:not(.reveal-visible), ' +
     '.testimonial-item:not(.reveal-visible), ' +
     '.timeline-item:not(.reveal-visible), ' +
     '.skills-item:not(.reveal-visible), ' +
-    '.project-item:not(.reveal-visible), ' +
     '.about-text:not(.reveal-visible), ' +
     '.article-title:not(.reveal-visible), ' +
     '.service-title:not(.reveal-visible), ' +
@@ -416,4 +449,14 @@ window.addEventListener('scroll', function() {
       item.classList.add('reveal-visible');
     }
   });
+  
+  // Kwa project items
+  const projectItems = document.querySelectorAll('.project-item.active:not(.reveal-visible)');
+  projectItems.forEach(item => {
+    const rect = item.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 50) {
+      item.classList.add('reveal-visible');
+    }
+  });
+  
 }, { passive: true });
