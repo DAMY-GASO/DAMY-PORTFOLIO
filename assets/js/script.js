@@ -25,7 +25,54 @@ if (sidebarBtn && sidebar) {
     });
   });
 }
+document.querySelectorAll('[data-lang-toggle] .lang-btn').forEach(btn => {
+  btn.addEventListener('click', function () {
+    console.log("Language button clicked: " + this.dataset.lang); // Hii itakuambia kama simu inasoma click
+    if (this.dataset.lang !== currentLang) {
+      applyLanguage(this.dataset.lang);
+    }
+  });
+});
 
+function applyLanguage(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    const entry = translations[key];
+    if (!entry) return;
+    const value = entry[lang] || entry.en;
+    if (value.indexOf('<br>') !== -1) {
+      el.innerHTML = value;
+    } else {
+      el.textContent = value;
+    }
+  });
+
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    const entry = translations[key];
+    if (!entry) return;
+    el.setAttribute('placeholder', entry[lang] || entry.en);
+  });
+
+  const selectValueElements = document.querySelectorAll('[data-select-value]');
+  const activeFilterBtn = document.querySelector('[data-filter-btn].active');
+
+  selectValueElements.forEach(selectValueEl => {
+    if (activeFilterBtn) {
+      const filterKey = activeFilterBtn.getAttribute('data-i18n');
+      if (filterKey && translations[filterKey]) {
+        selectValueEl.textContent = translations[filterKey][lang];
+      } else {
+        selectValueEl.textContent = activeFilterBtn.textContent;
+      }
+    } else {
+      selectValueEl.textContent = translations['select_default'][lang];
+    }
+  });
+} 
 // custom select variables (portfolio filter)
 const select = document.querySelector("[data-select]");
 const selectItems = document.querySelectorAll("[data-select-item]");
@@ -141,6 +188,15 @@ for (let i = 0; i < navigationLinks.length; i++) {
         pages[j].classList.add("active");
         this.classList.add("active");
         window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        // Kama page tuliyofungua ni Portfolio, hakikisha project cards
+        // zinaonekana mara moja badala ya kusubiri scroll event
+        // (zilikuwa zinabaki na opacity:0 milele kwa sababu check ya
+        // reveal ilishafanyika wakati Portfolio ilikuwa imefichwa).
+        if (typeof markProjectsReadyForReveal === 'function') {
+          markProjectsReadyForReveal();
+          revealProjects();
+        }
         break;
       }
     }
@@ -273,3 +329,64 @@ function safeQuerySelector(selector, fallback = null) {
     if (e.key === 'ArrowRight') showImage(currentIndex + 1);
   });
 })();
+
+
+ // ================================================================
+// CARD REVEAL - Toleo Rahisi
+// ================================================================
+
+// Ongeza class 'reveal-ready' kwa project items zote zilizo active
+function markProjectsReadyForReveal() {
+  document.querySelectorAll('.project-item.active:not(.reveal-ready)').forEach(item => {
+    item.classList.add('reveal-ready');
+  });
+}
+
+// Function ya ku-reveal (inaonyesha kadi zilizo kwenye view, au zilizo
+// tayari kwenye page iliyo active)
+function revealProjects() {
+  const projects = document.querySelectorAll('.project-item.active.reveal-ready:not(.visible)');
+  projects.forEach((item, index) => {
+    setTimeout(() => {
+      const rect = item.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 50) {
+        item.classList.add('visible');
+      }
+    }, 100 + (index * 80));
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  markProjectsReadyForReveal();
+
+  // Reveal baada ya 500ms
+  setTimeout(revealProjects, 500);
+
+  // Kwa filter changes
+  const filterButtons = document.querySelectorAll('[data-filter-btn], [data-select-item]');
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      setTimeout(() => {
+        markProjectsReadyForReveal();
+        revealProjects();
+      }, 300);
+    });
+  });
+});
+
+// Scroll event
+window.addEventListener('scroll', function() {
+  revealProjects();
+}, { passive: true });
+
+// Failsafe: hakikisha HAKUNA kadi inayobaki imefichwa (opacity:0) milele.
+// Hii inashughulikia hali ambapo check ya juu ilifanyika wakati page to
+// husika (mfano Portfolio) ilikuwa bado imefichwa (display:none), jambo
+// linaloweza kufanya kadi zisionekane kabisa hata baada ya kufungua tab.
+setTimeout(() => {
+  document.querySelectorAll('.project-item.reveal-ready:not(.visible)').forEach(item => {
+    item.classList.add('visible');
+  });
+}, 2000);
+  
+          
