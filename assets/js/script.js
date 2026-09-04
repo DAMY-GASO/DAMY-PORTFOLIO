@@ -322,141 +322,59 @@ function safeQuerySelector(selector, fallback = null) {
 })();
 
 
- 
-      // ================================================================
-// CARD REVEAL ON SCROLL - SEHEMU ZOTE (Toleo Kamili)
+ // ================================================================
+// CARD REVEAL - Toleo Rahisi
 // ================================================================
+
 document.addEventListener('DOMContentLoaded', function() {
   
-  // Elements zote zinazohitaji reveal (isipokuwa project items)
-  const revealElements = [
-    ...document.querySelectorAll('.service-item'),
-    ...document.querySelectorAll('.testimonial-item'),
-    ...document.querySelectorAll('.timeline-item'),
-    ...document.querySelectorAll('.skills-item'),
-    ...document.querySelectorAll('.about-text'),
-    ...document.querySelectorAll('.article-title'),
-    ...document.querySelectorAll('.service-title'),
-    ...document.querySelectorAll('.clients-title'),
-    ...document.querySelectorAll('.form-title'),
-    ...document.querySelectorAll('.skills-title'),
-    ...document.querySelectorAll('.timeline .title-wrapper'),
-    ...document.querySelectorAll('.cv-download'),
-    ...document.querySelectorAll('.contact-form'),
-    ...document.querySelectorAll('.social-links'),
-    ...document.querySelectorAll('.leave-review-btn')
-  ];
-  
-  // Observer kwa elements zote (isipokuwa project items)
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('reveal-visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.10,
-    rootMargin: '0px 0px -30px 0px'
+  // Kwa project items - ongeza class 'reveal-ready' kwa zote active
+  const activeProjects = document.querySelectorAll('.project-item.active');
+  activeProjects.forEach(item => {
+    item.classList.add('reveal-ready');
   });
   
-  revealElements.forEach(item => {
-    observer.observe(item);
-  });
-  
-  // ============================================================
-  // PROJECT ITEMS - Special handling
-  // ============================================================
-  
-  // Function ya kuangalia na kuongeza reveal-visible kwa projects
-  function checkAndRevealProjects() {
-    const activeProjects = document.querySelectorAll('.project-item.active');
-    activeProjects.forEach((item, index) => {
-      // Hakikisha item ina transition delay sahihi
-      const rect = item.getBoundingClientRect();
-      if (rect.top < window.innerHeight && rect.bottom > 0) {
-        item.classList.add('reveal-visible');
-      }
+  // Function ya ku-reveal
+  function revealProjects() {
+    const projects = document.querySelectorAll('.project-item.active.reveal-ready:not(.visible)');
+    projects.forEach((item, index) => {
+      setTimeout(() => {
+        const rect = item.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50) {
+          item.classList.add('visible');
+        }
+      }, 100 + (index * 80));
     });
   }
   
-  // Angalia mara ya kwanza baada ya page load
-  setTimeout(checkAndRevealProjects, 600);
+  // Reveal baada ya 500ms
+  setTimeout(revealProjects, 500);
   
   // Kwa filter changes
   const filterButtons = document.querySelectorAll('[data-filter-btn], [data-select-item]');
   filterButtons.forEach(btn => {
     btn.addEventListener('click', function() {
       setTimeout(() => {
-        const visibleItems = document.querySelectorAll('.project-item.active');
-        visibleItems.forEach((item, index) => {
-          item.classList.remove('reveal-visible');
-          setTimeout(() => {
-            const rect = item.getBoundingClientRect();
-            if (rect.top < window.innerHeight && rect.bottom > 0) {
-              item.classList.add('reveal-visible');
-            }
-          }, 50 + (index * 80));
+        // Ongeza reveal-ready kwa projects mpya zilizo active
+        const newActive = document.querySelectorAll('.project-item.active:not(.reveal-ready)');
+        newActive.forEach(item => {
+          item.classList.add('reveal-ready');
         });
-      }, 200);
-    });
-  });
-  
-  // Kwa navigation between pages
-  const navLinks = document.querySelectorAll('[data-nav-link]');
-  navLinks.forEach(link => {
-    link.addEventListener('click', function() {
-      setTimeout(() => {
-        const visibleItems = document.querySelectorAll('.project-item.active');
-        visibleItems.forEach((item, index) => {
-          item.classList.remove('reveal-visible');
-          setTimeout(() => {
-            const rect = item.getBoundingClientRect();
-            if (rect.top < window.innerHeight && rect.bottom > 0) {
-              item.classList.add('reveal-visible');
-            }
-          }, 100 + (index * 80));
-        });
-      }, 400);
+        revealProjects();
+      }, 300);
     });
   });
 });
 
-// Scroll event - kwa ajili ya elements zote
+// Scroll event
 window.addEventListener('scroll', function() {
-  // Kwa elements zote isipokuwa project items
-  const items = document.querySelectorAll(
-    '.service-item:not(.reveal-visible), ' +
-    '.testimonial-item:not(.reveal-visible), ' +
-    '.timeline-item:not(.reveal-visible), ' +
-    '.skills-item:not(.reveal-visible), ' +
-    '.about-text:not(.reveal-visible), ' +
-    '.article-title:not(.reveal-visible), ' +
-    '.service-title:not(.reveal-visible), ' +
-    '.clients-title:not(.reveal-visible), ' +
-    '.form-title:not(.reveal-visible), ' +
-    '.skills-title:not(.reveal-visible), ' +
-    '.timeline .title-wrapper:not(.reveal-visible), ' +
-    '.cv-download:not(.reveal-visible), ' +
-    '.contact-form:not(.reveal-visible), ' +
-    '.social-links:not(.reveal-visible), ' +
-    '.leave-review-btn:not(.reveal-visible)'
-  );
-  
-  items.forEach(item => {
+  const projects = document.querySelectorAll('.project-item.active.reveal-ready:not(.visible)');
+  projects.forEach((item, index) => {
     const rect = item.getBoundingClientRect();
     if (rect.top < window.innerHeight - 50) {
-      item.classList.add('reveal-visible');
+      item.classList.add('visible');
     }
   });
-  
-  // Kwa project items
-  const projectItems = document.querySelectorAll('.project-item.active:not(.reveal-visible)');
-  projectItems.forEach(item => {
-    const rect = item.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 50) {
-      item.classList.add('reveal-visible');
-    }
-  });
-  
 }, { passive: true });
+  
+          
