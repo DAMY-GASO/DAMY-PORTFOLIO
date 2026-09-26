@@ -7,8 +7,8 @@
 const translations = {
   // Sidebar
   profession: {
-    en: 'Web Developer & Graphics Designer <br> SEO & Content Marketing specialist  <br> Cyber Security Consultant ',
-    sw: 'Mtengenezaji wa Tovuti & Msanifu wa Picha <br> Mtaalamu wa SEO na Masoko ya Maudhui  <br> Mshauri wa Usalama wa Mtandao '
+    en: 'Web Developer & Graphics Designer <br> SEO & Content Marketing specialist  <br> IT & Cyber Security Consultant ',
+    sw: 'Mtengenezaji wa Tovuti & Msanifu wa Picha <br> Mtaalamu wa SEO na Masoko ya Maudhui  <br> Mshauri wa IT na Usalama wa Mtandao '
   },
   show_contacts: { en: 'Show Contacts', sw: 'Onyesha Mawasiliano' },
   contact_email: { en: 'Email', sw: 'Barua Pepe' },
