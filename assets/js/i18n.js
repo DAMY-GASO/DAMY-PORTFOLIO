@@ -33,7 +33,7 @@ const translations = {
 
   // Services
   service_title: { en: "What I do", sw: 'Ninachofanya' },
-  service1_title: { en: 'Cybersecurity Consultant', sw: 'Mshauri wa Usalama wa Mtandao' },
+  service1_title: { en: 'IT & Cybersecurity Consultant', sw: 'Mshauri wa IT na Usalama wa Mtandao' },
   service1_text: {
     en: "I ensure your company's information systems are resilient against cyber threats. I conduct comprehensive risk assessments and implement robust strategies to protect sensitive company and client data.",
     sw: 'Ninahakikisha mifumo ya taarifa ya kampuni yako inakabiliana vyema na vitisho vya kimtandao. Ninafanya tathmini kamili za hatari na kutekeleza mikakati imara ya kulinda data nyeti ya kampuni na wateja.'
