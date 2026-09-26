@@ -25,11 +25,41 @@ if (sidebarBtn && sidebar) {
     });
   });
 }
-document.querySelectorAll('[data-lang-toggle] .lang-btn').forEach(btn => {
-  btn.addEventListener('click', function () {
-    console.log("Language button clicked: " + this.dataset.lang); // Hii itakuambia kama simu inasoma click
-    if (this.dataset.lang !== currentLang) {
-      applyLanguage(this.dataset.lang);
+
+// ------------------------------------------------------------------
+// Language dropdown (now lives inside the navbar, desktop + mobile)
+// ------------------------------------------------------------------
+const langDropdown = document.querySelector('[data-lang-dropdown]');
+const langDropdownBtn = document.querySelector('[data-lang-dropdown-btn]');
+const langCurrentLabel = document.querySelector('[data-lang-current]');
+const langOptions = document.querySelectorAll('.lang-option[data-lang]');
+
+if (langDropdownBtn && langDropdown) {
+  langDropdownBtn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    elementToggleFunc(langDropdown);
+  });
+
+  // Close the dropdown when clicking anywhere outside it
+  document.addEventListener('click', function (e) {
+    if (!langDropdown.contains(e.target)) {
+      langDropdown.classList.remove('active');
+    }
+  });
+}
+
+langOptions.forEach(btn => {
+  btn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    const lang = this.dataset.lang;
+
+    langOptions.forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    if (langCurrentLabel) langCurrentLabel.textContent = lang.toUpperCase();
+    if (langDropdown) langDropdown.classList.remove('active');
+
+    if (typeof currentLang === 'undefined' || lang !== currentLang) {
+      applyLanguage(lang);
     }
   });
 });
@@ -212,6 +242,53 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 window.addEventListener('resize', function() {
   if (sidebar && window.innerWidth > 768 && sidebar.classList.contains('active')) {
     sidebar.classList.remove('active');
+  }
+});
+
+// ------------------------------------------------------------------
+// Mobile navbar (hamburger-triggered offcanvas panel, slides from left)
+// Replaces the old bottom-fixed tab bar on mobile/tablet.
+// ------------------------------------------------------------------
+const mobileNavToggle = document.querySelector('[data-mobile-nav-toggle]');
+const mobileNavbar = document.querySelector('[data-navbar]');
+const mobileNavClose = document.querySelector('[data-navbar-close]');
+const mobileNavBackdrop = document.querySelector('[data-navbar-backdrop]');
+
+function openMobileNav() {
+  if (!mobileNavbar) return;
+  mobileNavbar.classList.add('active');
+  if (mobileNavBackdrop) mobileNavBackdrop.classList.add('active');
+  if (mobileNavToggle) mobileNavToggle.setAttribute('aria-expanded', 'true');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMobileNav() {
+  if (!mobileNavbar) return;
+  mobileNavbar.classList.remove('active');
+  if (mobileNavBackdrop) mobileNavBackdrop.classList.remove('active');
+  if (mobileNavToggle) mobileNavToggle.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+if (mobileNavToggle) {
+  mobileNavToggle.addEventListener('click', openMobileNav);
+}
+if (mobileNavClose) {
+  mobileNavClose.addEventListener('click', closeMobileNav);
+}
+if (mobileNavBackdrop) {
+  mobileNavBackdrop.addEventListener('click', closeMobileNav);
+}
+
+// Close the offcanvas navbar once a page link is chosen
+document.querySelectorAll('[data-nav-link]').forEach(link => {
+  link.addEventListener('click', closeMobileNav);
+});
+
+// Close the offcanvas navbar automatically if the window is resized up to desktop
+window.addEventListener('resize', function () {
+  if (window.innerWidth >= 1024) {
+    closeMobileNav();
   }
 });
 
@@ -456,5 +533,3 @@ function safeQuerySelector(selector, fallback = null) {
     btn.addEventListener('click', () => setTimeout(runPortfolioLoader, 0));
   });
 })();
-  
-          
