@@ -127,6 +127,19 @@
 <body>
 
   <!--
+    - Mobile hamburger button - opens the offcanvas navbar (left side)
+    - Visible on mobile/tablet only; hidden at desktop (>=1024px) via CSS
+  -->
+  <button class="mobile-nav-toggle" data-mobile-nav-toggle aria-label="Open menu" aria-expanded="false">
+    <ion-icon name="menu-outline"></ion-icon>
+  </button>
+
+  <!--
+    - Backdrop behind the offcanvas navbar on mobile
+  -->
+  <div class="navbar-backdrop" data-navbar-backdrop></div>
+
+  <!--
     - #MAIN
   -->
 
@@ -137,10 +150,6 @@
     -->
 
     <aside class="sidebar" data-sidebar>
-      <div class="lang-toggle" data-lang-toggle>
-        <button type="button" class="lang-btn active" data-lang="en">EN</button>
-        <button type="button" class="lang-btn" data-lang="sw">SW</button>
-      </div>
 
       <div class="sidebar-info">
         <figure class="avatar-box">
@@ -217,9 +226,17 @@
 
       <!--
         - #NAVBAR
+        - On mobile this becomes an offcanvas panel sliding in from the left,
+          opened via the hamburger button and closed via the X button,
+          backdrop click, choosing a page, or resizing to desktop.
+        - On desktop (>=1024px) it stays as the top-right tab bar.
       -->
 
-      <nav class="navbar">
+      <nav class="navbar" data-navbar>
+        <button class="navbar-close" data-navbar-close aria-label="Close menu">
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+
         <ul class="navbar-list">
           <li class="navbar-item">
             <button class="navbar-link active" data-nav-link data-target="about" data-i18n="nav_about">About</button>
@@ -235,6 +252,23 @@
 
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link data-target="contact" data-i18n="nav_contact">Contact</button>
+          </li>
+
+          <li class="navbar-item lang-dropdown" data-lang-dropdown>
+            <button class="navbar-link lang-dropdown-btn" data-lang-dropdown-btn>
+              <ion-icon name="language-outline"></ion-icon>
+              <span data-lang-current>EN</span>
+              <ion-icon name="chevron-down-outline" class="lang-dropdown-chevron"></ion-icon>
+            </button>
+
+            <ul class="lang-dropdown-menu" data-lang-dropdown-menu>
+              <li>
+                <button class="lang-option active" data-lang="en">English</button>
+              </li>
+              <li>
+                <button class="lang-option" data-lang="sw">Kiswahili</button>
+              </li>
+            </ul>
           </li>
         </ul>
       </nav>
