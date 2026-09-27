@@ -115,7 +115,7 @@ const translations = {
   skill_htmlcss: { en: 'HTML & CSS', sw: 'HTML na CSS' },
   skill_phpjava: { en: 'PHP & Java', sw: 'PHP na Java' },
   skill_photoshop_illustrator: { en: 'Adobe Photoshop & Illustrator', sw: 'Adobe Photoshop na Illustrator' },
-  skill_aftereffects: { en: 'Adobe After Effects (Motion Graphics)', sw: 'Adobe After Effects (Michoro ya Mwendo)' },
+  skill_aftereffects: { en: 'Adobe inDesign (Books preparation)', sw: 'Adobe inDesign (Maandalizi ya vitabu)' },
   skill_gsc: { en: 'Google Search Console', sw: 'Google Search Console' },
   skill_ga: { en: 'Google Analytics', sw: 'Google Analytics' },
   skill_keywordresearch: { en: 'SEO & Keyword Research', sw: 'SEO na Utafiti wa Maneno Muhimu' },
