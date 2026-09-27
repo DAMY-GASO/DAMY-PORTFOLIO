@@ -48,10 +48,10 @@ const translations = {
     en: "I build the visual face of your brand. From logos and color palettes to marketing collateral, I ensure your brand maintains a modern, professional, and memorable aesthetic.",
     sw: 'Ninajenga sura ya kuona ya brand yako. Kuanzia logo na rangi hadi vifaa vya masoko, ninahakikisha brand yako inabaki ya kisasa, ya kitaalamu, na inayokumbukwa.'
   },
-  service4_title: { en: 'Website Developer', sw: 'Mtengenezaji wa Tovuti' },
+  service4_title: { en: 'Website & App Developer', sw: 'Mtengenezaji wa Tovuti na Programu za simu' },
   service4_text: {
-    en: 'I build modern, high-performance websites that are fully responsive across mobile and desktop devices. My development process focuses not just on technical functionality, but on achieving specific business objectives.',
-    sw: 'Ninajenga tovuti za kisasa, zenye utendaji wa hali ya juu, na zinazojibadilisha vizuri kwenye simu na kompyuta. Mchakato wangu wa utengenezaji hauangalii tu utendaji wa kiufundi, bali pia kufikia malengo mahususi ya kibiashara.'
+    en: 'I build modern, high-performance websites and mobile apps that are fully responsive across mobile and desktop devices. My development process focuses not just on technical functionality, but on achieving specific business objectives.',
+    sw: 'Ninajenga tovuti na programu za kisasa, zenye utendaji wa hali ya juu, na zinazojibadilisha vizuri kwenye simu na kompyuta. Mchakato wangu wa utengenezaji hauangalii tu utendaji wa kiufundi, bali pia kufikia malengo mahususi ya kibiashara.'
   },
 
   // Testimonials
